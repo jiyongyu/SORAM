@@ -1,0 +1,21 @@
+
+#ifndef DRAM_H
+#define DRAM_H
+
+#include <stdio.h>
+#include <string.h>
+
+#include "util.hpp"
+#include "encryption.hpp"
+
+addr_t addr_translation_vr(addr_t vaddr);
+
+// -----------------------------------------------------------------------------
+// Interface
+// -----------------------------------------------------------------------------
+
+void dram_write(cache_line_t * line);
+
+void dram_read(cache_line_t * line);
+
+#endif

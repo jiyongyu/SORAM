@@ -1,0 +1,17 @@
+
+#ifndef ENCRYPTION_H
+#define ENCRYPTION_H
+
+#include "util.hpp"
+
+#include "cryptopp/aes.h"
+using CryptoPP::AES;
+
+#include "cryptopp/modes.h"
+using CryptoPP::ECB_Mode;
+
+void crypto_initialize();
+void encrypt(cache_line_t * line);
+void decrypt(cache_line_t * line);
+
+#endif

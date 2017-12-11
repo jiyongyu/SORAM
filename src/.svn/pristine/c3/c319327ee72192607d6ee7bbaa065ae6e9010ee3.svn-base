@@ -1,0 +1,36 @@
+
+import sys
+
+from util import *
+
+'''
+Usage: 
+$ python make.py [clean|debug|cachegrind|performance]
+   clean: 
+   debug: lots of printouts/etc
+   cachegrind: NO printouts, full optimizations but we need the -g harness...
+   performance: performance build -- for performance measuring
+'''
+
+# ------------------------------------------------------------------------------
+# Modes
+# ------------------------------------------------------------------------------
+
+if len(sys.argv) == 1:
+	make_target()
+
+elif sys.argv[1] == 'clean':
+	make_clean()
+
+elif sys.argv[1] == 'debug':
+	make_debug()
+
+elif sys.argv[1] == 'cachegrind':
+	make_cachegrind()
+
+elif sys.argv[1] == 'performance':
+	make_performance()
+
+else: 
+   print "Unrecognized command: " + sys.argv[1]
+   assert False

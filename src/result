@@ -1,0 +1,1401 @@
+--------------------------------------------------------------------------------
+I1 cache:         32768 B, 64 B, 4-way associative
+D1 cache:         32768 B, 64 B, 8-way associative
+LL cache:         8388608 B, 64 B, 16-way associative
+Command:          ./virtual_ascend
+Data file:        cachegrind.out.7993
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Thresholds:       0 100 100 100 100 100 100 100 100
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+           Ir  I1mr  ILmr          Dr   D1mr  DLmr         Dw  D1mw  DLmw 
+--------------------------------------------------------------------------------
+1,404,367,882 1,783 1,664 234,433,801 16,297 8,198 84,112,796 4,052 3,182  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+         Ir I1mr ILmr         Dr  D1mr  DLmr         Dw  D1mw  DLmw  file:function
+--------------------------------------------------------------------------------
+503,327,568    2    2 83,887,928     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:is_sw_memory(signed char*)
+383,778,816    3    3 85,983,232     6     0 37,748,736     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:update_status(int, int)
+232,789,312    9    9 41,943,808    98     0 42,992,480     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_access(long, int, long, int)
+217,060,781    0    0  9,437,425     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:lg2(int)
+ 41,946,240    1    1 12,583,872     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:is_reserved_memory(signed char*)
+ 15,728,650    2    2          3     1     0  3,145,730     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp:run_put()
+  5,242,880    1    1          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_read(int)
+  2,097,152    0    0          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_write(long, int, long)
+    926,196   10   10    154,060 1,897 1,594     50,833    16     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-lookup.c:_dl_lookup_symbol_x
+    683,931   37   36    245,033 3,996   815     96,656    19     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-lookup.c:do_lookup_x
+    255,469   24   23     55,320 3,069 2,587     24,873 1,589   874  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+    111,299    8    6     37,787   362   221     12,620    24     1  /build/glibc-bfm8X4/glibc-2.23/elf/dl-lookup.c:check_match
+     84,943   85   54     21,710   237    66          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../strcmp.S:strcmp
+     82,468   14   14     25,956 2,371 1,419      3,298     2     0  /build/glibc-bfm8X4/glibc-2.23/elf/do-rel.h:_dl_relocate_object
+     56,470    9    9     13,757 1,036   834         17     1     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-addr.c:_dl_addr
+     28,602    1    1          0     0     0     14,301 1,589 1,589  /usr/include/x86_64-linux-gnu/bits/string3.h:cache_initialize()
+     12,240    4    4      4,560     1     0        240     0     0  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*)
+     11,040    2    2      2,208     0     0      2,240    18    16  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/dram.cpp:dram_write(cache_line_t*)
+     10,842    2    2      2,804    35     0      1,613     5     2  /build/glibc-bfm8X4/glibc-2.23/elf/dl-misc.c:_dl_name_match_p
+      9,697    3    3      3,218 1,574     0         26     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:cache_flush()
+      6,576    3    3      1,088     3     0      1,104    16     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/dram.cpp:dram_read(cache_line_t*)
+      6,516    2    2      1,629   203   203      1,599     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:cache_initialize()
+      6,192   14   14      1,953    44    34        750    60    56  /build/glibc-bfm8X4/glibc-2.23/elf/dl-version.c:_dl_check_map_versions
+      6,142    6    6      2,324   307    45        415     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../elf/dl-runtime.c:_dl_fixup
+      5,548    4    4        841    48    45          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-cache.c:_dl_cache_libcmp
+      5,504    3    3      1,664     4     0        640     0     0  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/btowc.c:btowc
+      4,150    7    7      1,494     0     0      1,411     6     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_avx
+      4,078   38   38        845    23     1        337     8     7  /build/glibc-bfm8X4/glibc-2.23/elf/dl-deps.c:_dl_map_object_deps
+      3,941    4    4      1,512    46    41        351     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-version.c:match_symbol
+      3,141   26   26        701     2     0        425     9     9  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:_dl_map_object
+      3,013   28   28        687     7     7        389    21    21  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:_dl_map_object_from_fd
+      2,757    4    4          5     0     0        810    20    20  ???:std::ctype<wchar_t>::_M_initialize_ctype()
+      2,740  218  194      1,537   154     7        521    24    14  ???:???
+      2,624    3    3        704     0     0        208     1     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:evict_line(int, int)
+      2,496    4    4        912    15     0        624     0     0  ???:__dynamic_cast
+      2,250    7    7        370    55    55        196    44    44  /build/glibc-bfm8X4/glibc-2.23/elf/get-dynamic-info.h:_dl_map_object_from_fd
+      2,090    6    6        278     9     9          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strlen.S:strlen
+      1,893   16   16        375    40    40        239     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/dl-cache.c:_dl_load_cache_lookup
+      1,718   15   15        388    10    10        246     5     5  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:open_verify.constprop.7
+      1,693   20   20        533    60     0        104     8     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-fini.c:_dl_fini
+      1,571    6    6        261     5     5        221    24    24  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memcpy.S:memcpy
+      1,566   14   14        295    10    10        290    52    52  /build/glibc-bfm8X4/glibc-2.23/elf/dl-object.c:_dl_new_object
+      1,548    6    3         29     0     0        692   160   160  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memset.S:memset
+      1,364    4    4        268     2     0        263     2     2  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c:__libc_memalign
+      1,360    3    3        440     1     0        360     0     0  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+      1,125   11   11        337    53     0        265     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-reloc.c:_dl_relocate_object
+      1,098   61   61        260    41    13        120    13    11  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:dl_main
+      1,026    3    3        158     4     0        177     0     0  /build/glibc-bfm8X4/glibc-2.23/wctype/wctype_l.c:wctype_l
+      1,025   69   69         75    27     1        456    50    50  ???:std::locale::_Impl::_Impl(unsigned long)
+      1,024   15   15        329     1     1        168     4     4  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:open_path
+      1,012    4    4        169     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memcmp.S:__GI_memcmp
+        990    7    6        142     3     2        104     9     9  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/memcpy.S:mempcpy
+        984    5    5        153    13    12          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memcmp.S:bcmp
+        908    1    1        354     7     6         46     0     0  ???:std::locale::id::_M_id() const
+        896    1    1        128     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/./wcsmbsload.h:btowc
+        819    4    4        182     0     0        150     5     5  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/sysv/linux/wordsize-64/mmap.c:mmap
+        768    1    1        128     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/wctob.c:wctob
+        736   12   12        220     0     0         90     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/./dl-map-segments.h:_dl_map_object_from_fd
+        695    5    5         90     8     8          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../strchr.S:index
+        651    4    4          3     0     0        257    33    33  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:malloc_consolidate
+        640    4    4        176     0     0        320     6     6  /build/glibc-bfm8X4/glibc-2.23/elf/dl-error.c:_dl_catch_error
+        640    1    1        128     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/iconv/gconv_simple.c:__gconv_btwoc_ascii
+        637   45   45        204     7     2        133     2     0  /build/glibc-bfm8X4/glibc-2.23/stdio-common/vfprintf.c:vfprintf
+        552    9    9         86     6     6         16     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/cacheinfo.c:intel_check_word
+        528    6    6        208     2     1        144     0     0  ???:__cxxabiv1::__vmi_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+        513    5    5        137     4     0         41     0     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_finalize.c:__cxa_finalize
+        512    2    2        384     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-profstub.c:_dl_mcount_wrapper_check
+        511    4    4        166    44     0         81     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-init.c:call_init.part.0
+        480    1    1        144     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/dram.cpp:addr_translation_vr(int)
+        478    9    7        121    15     2         45     1     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_atexit.c:__new_exitfn
+        472    4    4          8     1     0        216    31    26  ???:std::ios_base::ios_base()
+        427    1    1         47     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../string/bits/string2.h:handle_ld_preload
+        418    2    2        198     0     0        132     3     2  ???:std::locale::locale()
+        415   40   22         53     9     1         72     5     1  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:_int_malloc
+        413    6    6        136     5     2         75     0     0  ???:std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*)
+        413    6    6        136     0     0         75     1     0  ???:std::numpunct<char>::_M_initialize_numpunct(__locale_struct*)
+        412   10    5         64     0     0         60     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../string/memmove.c:memmove
+        393    2    2        110     8     0         58     7     7  /build/glibc-bfm8X4/glibc-2.23/nptl/libc_pthread_init.c:__libc_pthread_init
+        376   14   13         93    13    11         39     5     5  /build/glibc-bfm8X4/glibc-2.23/elf/../elf/dl-sysdep.c:_dl_sysdep_start
+        358    2    2         99     0     0         63     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-object.c:_dl_add_to_namespace_list
+        355   31   31         83    15     0        191    15    13  ???:std::ios_base::Init::Init()
+        355   15   15         56     2     2         64     5     5  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:_dl_init_paths
+        352    1    1          0     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../bits/stdlib-bsearch.h:intel_check_word
+        349    6    6         73     0     0         75     3     3  ???:std::__cxx11::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*)
+        349    6    6         73     0     0         75     0     0  ???:std::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*)
+        339    5    5         84     0     0        136     3     1  /build/glibc-bfm8X4/glibc-2.23/setjmp/../sysdeps/x86_64/setjmp.S:__sigsetjmp
+        323    3    3          7     0     0        296    37    37  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_allocate_tls_storage
+        293    6    6         64     2     1         48     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5
+        279   19   19         53     0     0         46     3     3  /build/glibc-bfm8X4/glibc-2.23/elf/dl-hwcaps.c:_dl_important_hwcaps
+        260    1    1        260     3     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:rtld_lock_default_lock_recursive
+        260    0    0        260     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:rtld_lock_default_unlock_recursive
+        255    2    2        120     0     0         45     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-deps.c:openaux
+        254   10   10         44     6     6         18     8     8  /build/glibc-bfm8X4/glibc-2.23/elf/get-dynamic-info.h:_dl_start
+        251    8    8         36     7     7         25     6     6  /build/glibc-bfm8X4/glibc-2.23/elf/get-dynamic-info.h:dl_main
+        244    2    2         77     0     0          1     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c:strsep
+        242    6    6         13     2     0         70     1     1  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp:initialize_put()
+        242    3    2         55     1     0         88     5     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_atexit.c:__cxa_atexit
+        242    1    1          0     0     0        128     1     0  /usr/include/x86_64-linux-gnu/bits/string3.h:initialize_put()
+        226    4    4         39     7     0         25     0     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/exit.c:__run_exit_handlers
+        223   26   22         55     6     1         34     4     3  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:sysmalloc
+        212    3    3         18     1     1         16     0     0  /build/glibc-bfm8X4/glibc-2.23/stdio-common/_itoa.c:_itoa_word
+        207    2    2         63    11    11         54     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-lookup.c:_dl_setup_hash
+        192    2    2         48     0     0         72     0     0  ???:std::ios_base::_M_init()
+        180    3    3         72     8     2         18     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/iofflush.c:fflush
+        178    1    1         70     1     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/pthread_once.c:pthread_once
+        177    3    3         58     0     0         12     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/./dl-load.h:_dl_map_object_from_fd
+        175    2    2         70     2     1         14     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/posix/dl-fileid.h:_dl_map_object_from_fd
+        168    2    2         51    11    11         16     3     3  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-machine.h:_dl_start
+        168    1    1          0     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c:calloc
+        167    6    6         55    18     1          9     2     0  /build/glibc-bfm8X4/glibc-2.23/malloc/arena.c:ptmalloc_init.part.5
+        160   17   17         30     0     0         36     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c:fillin_rpath
+        159    8    8         11     0     0         15     1     1  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/cacheinfo.c:init_cacheinfo
+        153    2    2         56     9     9          2     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-environ.c:_dl_next_ld_env_entry
+        152    2    2         80     0     0         16     0     0  ???:std::locale::operator=(std::locale const&)
+        149   13   13         24     5     0         54     7     3  /build/glibc-bfm8X4/glibc-2.23/nptl/nptl-init.c:__pthread_initialize_minimal
+        149    4    4         39     8     0         16     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-init.c:_dl_init
+        149    1    1         13     4     2          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-misc.c:_dl_higher_prime_number
+        147    0    0          0     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c:malloc
+        145    2    2         23     0     0         13     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-version.c:_dl_check_all_versions
+        140    1    1         56     0     0         28     0     0  ???:std::locale::facet::_S_get_c_locale()
+        139    7    7         41     3     0         19     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_allocate_tls_init
+        137    6    6         12     0     0          0     0     0  ???:std::ctype<wchar_t>::_M_convert_to_wmask(unsigned short) const
+        136    1    1         16     0     0         32     0     0  /build/glibc-bfm8X4/glibc-2.23/string/strdup.c:strdup
+        126    0    0          0     0     0        120     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cryptopp/misc.h:crypto_initialize()
+        124    8    8         38     0     0         38     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/x86_64/sigaction.c:__libc_sigaction
+        121    1    1         25     4     4          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/do-rel.h:_dl_start
+        121    1    1         17     0     0          9     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:open
+        120    4    4         24     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp-sse2-unaligned.S:__strcmp_sse2_unaligned
+        120    2    2         12     0     0         44     0     0  ???:std::basic_ios<char, std::char_traits<char> >::_M_cache_locale(std::locale const&)
+        120    2    2         12     0     0         44     0     0  ???:std::basic_ios<wchar_t, std::char_traits<wchar_t> >::_M_cache_locale(std::locale const&)
+        116    4    4          8     1     0         79     9     9  ???:std::ctype<char>::ctype(unsigned short const*, bool, unsigned long)
+        112    6    6         37     0     0         31     0     0  ???:std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        112    6    6         37     0     0         31     0     0  ???:std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        112    4    4         37     1     1         31     0     0  ???:std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        112    4    4         37     0     0         31     0     0  ???:std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        108    7    7         29     1     0         32     0     0  ???:std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        108    7    7         29     0     0         32     0     0  ???:std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        108    6    6         29     0     0         32     0     0  ???:std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        108    6    6         29     0     0         32     0     0  ???:std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*)
+        108    5    5         38     4     0         26     0     0  /build/glibc-bfm8X4/glibc-2.23/debug/printf_chk.c:__printf_chk
+        107   12   12          6     0     0         52     0     0  ???:std::__timepunct<char>::_M_initialize_timepunct(__locale_struct*)
+        106   15   15         14     2     2         13     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86/cpu-features.c:_dl_sysdep_start
+        105   11   11          5     0     0         51     0     0  ???:std::__timepunct<wchar_t>::_M_initialize_timepunct(__locale_struct*)
+        104    6    6         19     1     1         11     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_determine_tlsoffset
+        104    5    5         25     9     1         14     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:init_tls
+        101    4    4         43     1     0         15     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5
+         99    8    6         31     5     0          8     1     0  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:malloc
+         98    5    5         14     0     0         26     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/cacheinfo.c:handle_intel
+         96    2    2         36     1     0         12     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/unregister-atfork.c:__unregister_atfork
+         92    7    7         31     2     0         16     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_cleanup
+         92    3    3         10     0     0          5     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/memcpy.S:__GI_mempcpy
+         90    9    9         25     5     1         12     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_flush_all_lockp
+         90    3    3          9     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:_fxstat
+         88    8    8         19     2     1         13     0     0  ???:__cpu_indicator_init
+         88    2    2         12     0     0         40     0     0  ???:std::basic_ios<wchar_t, std::char_traits<wchar_t> >::init(std::basic_streambuf<wchar_t, std::char_traits<wchar_t> >*)
+         88    2    2         12     0     0         40     0     0  ???:std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)
+         84    2    2         36     2     0         12     0     0  ???:bool std::has_facet<std::ctype<wchar_t> >(std::locale const&)
+         84    2    2         36     2     0         12     0     0  ???:bool std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+         84    2    2         36     1     0         12     0     0  ???:bool std::has_facet<std::num_put<wchar_t, std::ostreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > >(std::locale const&)
+         84    2    2         36     0     0         12     0     0  ???:bool std::has_facet<std::ctype<char> >(std::locale const&)
+         84    1    1         36     1     0         12     0     0  ???:bool std::has_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+         84    1    1         36     0     0         12     0     0  ???:bool std::has_facet<std::num_get<wchar_t, std::istreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > >(std::locale const&)
+         83    0    0          0     0     0         83     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-machine.h:_dl_fixup
+         82    8    6         19     3     1         18     5     5  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:_dl_start
+         80    8    4         20     2     1         12     0     0  /build/glibc-bfm8X4/glibc-2.23/string/wordcopy.c:_wordcopy_fwd_aligned
+         80    6    6         14     1     1          7     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c:_dl_discover_osversion
+         80    2    2         48     0     0          8     0     0  ???:std::locale::~locale()
+         80    2    2          8     1     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strchr.S:strchrnul
+         76    2    2         36     0     0         12     0     0  ???:std::num_put<wchar_t, std::ostreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > const& std::use_facet<std::num_put<wchar_t, std::ostreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > >(std::locale const&)
+         76    2    2         36     0     0         12     0     0  ???:std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > const& std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+         76    2    2         36     0     0         12     0     0  ???:std::ctype<wchar_t> const& std::use_facet<std::ctype<wchar_t> >(std::locale const&)
+         76    2    2         36     0     0         12     0     0  ???:std::num_get<wchar_t, std::istreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > const& std::use_facet<std::num_get<wchar_t, std::istreambuf_iterator<wchar_t, std::char_traits<wchar_t> > > >(std::locale const&)
+         76    2    2         36     0     0         12     0     0  ???:std::ctype<char> const& std::use_facet<std::ctype<char> >(std::locale const&)
+         76    1    1         36     0     0         12     0     0  ???:std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > const& std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+         75    1    1         15     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/syscall-template.S:mprotect
+         72    8    4         16     1     0          4     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../nptl/pthread_mutex_lock.c:pthread_mutex_lock
+         72    3    3         20     0     0          4     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-debug.c:_dl_debug_initialize
+         72    1    1          8     0     0          8     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:access
+         70    6    6         18     0     0         17     2     2  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:handle_ld_preload
+         70    5    3         18     1     0         16     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/pthread_once.c:__pthread_once_slow
+         69    3    2         13     3     1         13     0     0  ???:__libc_csu_init
+         60    1    1         30     0     0          6     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/libioP.h:fflush
+         58    4    4         16     5     0         17     0     0  /build/glibc-bfm8X4/glibc-2.23/csu/../csu/libc-start.c:(below main)
+         56    6    3         16     2     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/pthread_mutex_unlock.c:pthread_mutex_unlock
+         56    4    4         16     0     0         11     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_do_write@@GLIBC_2.2.5
+         56    1    1         44     0     0         46     6     6  /usr/include/x86_64-linux-gnu/bits/string3.h:crypto_initialize()
+         54    4    4          5     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strrchr.S:rindex
+         54    3    3         26     8     0          6     0     0  ???:std::ios_base::Init::~Init()
+         53    5    5         12     3     3         10     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/register-atfork.c:__register_atfork
+         49    3    3         14     3     1          8     1     0  /build/glibc-bfm8X4/glibc-2.23/misc/sbrk.c:sbrk
+         49    1    1          4     0     0          3     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/sysv/linux/wordsize-64/xstat.c:_xstat
+         48    7    7         10     0     0         13     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_overflow@@GLIBC_2.2.5
+         48    4    4         10     0     0          8     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_default_xsputn
+         46    5    5         17     6     0          5     0     0  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:free
+         46    3    3         19     2     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-open.c:_dl_find_dso_for_object
+         42    3    3         18     6     0          8     1     0  /build/glibc-bfm8X4/glibc-2.23/locale/uselocale.c:uselocale
+         42    2    2         21    10     0          6     0     0  ???:std::basic_ostream<wchar_t, std::char_traits<wchar_t> >::flush()
+         42    2    2         21    10     0          6     0     0  ???:std::ostream::flush()
+         41    3    3          6     0     0          9     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-misc.c:_dl_sysdep_read_whole_file
+         40    3    3         16     6     0         10     1     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_add_to_slotinfo
+         40    1    1          8     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:close
+         40    1    1          4     1     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/generic/dl-hash.h:time
+         40    0    0          4     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/csu/../sysdeps/generic/dl-hash.h:_init
+         40    0    0          4     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/generic/dl-hash.h:gettimeofday
+         38    5    5          9     2     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c:malloc_hook_ini
+         38    4    4          8     0     0         14     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_default_setbuf
+         37    5    5         10     0     0          7     0     0  /build/glibc-bfm8X4/glibc-2.23/locale/newlocale.c:newlocale
+         37    3    3         12     1     0          7     0     0  ???:__cxa_guard_acquire
+         37    3    3          9     0     0          6     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_write@@GLIBC_2.2.5
+         36    3    3          9     1     0          6     1     0  /build/glibc-bfm8X4/glibc-2.23/libio/filedoalloc.c:_IO_file_doallocate
+         36    0    0         18     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:_dl_initial_error_catch_tsd
+         35    1    1          7     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:read
+         32    3    3         11     4     0         10     4     4  /build/glibc-bfm8X4/glibc-2.23/csu/../csu/init-first.c:_init
+         32    1    1         32     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cryptopp/secblock.h:encrypt(cache_line_t*)
+         28    4    4          2     0     0          8     0     0  /build/glibc-bfm8X4/glibc-2.23/csu/../sysdeps/unix/sysv/linux/x86_64/init-first.c:_init
+         28    2    2         10     1     0         12     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-error.c:_dl_receive_error
+         28    1    1          6     0     0         10     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_defer_compat.c:_pthread_cleanup_push_defer
+         24    3    2         12     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-vdso.c:_dl_vdso_vsym
+         24    2    2          7     2     0          5     1     0  /build/glibc-bfm8X4/glibc-2.23/misc/init-misc.c:__init_misc
+         24    1    1          4     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/sysv/linux/x86_64/brk.c:brk
+         22    2    2         12     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/debug/../libio/libioP.h:__printf_chk
+         22    2    2          4     1     0          9     0     0  ???:std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+         22    2    2          4     0     0          9     1     1  ???:std::__timepunct<char>::__timepunct(std::__timepunct_cache<char>*, unsigned long)
+         20    3    3          1     0     0          5     0     0  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/unix/sysv/linux/x86/gettimeofday.c:gettimeofday
+         20    2    2          1     0     0          5     0     0  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/unix/sysv/linux/x86/time.c:time
+         20    0    0          0     0     0         10     1     0  /build/glibc-bfm8X4/glibc-2.23/stdio-common/printf-parse.h:vfprintf
+         19    2    2          4     0     0          8     1     1  ???:std::messages<char>::messages(unsigned long)
+         19    2    2          4     0     0          8     0     0  ???:std::__cxx11::messages<wchar_t>::messages(unsigned long)
+         19    2    2          4     0     0          8     0     0  ???:std::messages<wchar_t>::messages(unsigned long)
+         19    2    2          3     0     0          7     1     1  ???:std::ctype<wchar_t>::ctype(unsigned long)
+         19    1    1          4     0     0          8     1     1  ???:std::__cxx11::messages<char>::messages(unsigned long)
+         18    2    2          8     1     0          4     1     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_doallocbuf
+         18    2    1          9     0     0          3     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c:free
+         18    2    1          0     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/futex-internal.h:__pthread_once_slow
+         18    1    1          4     0     0          4     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c:_IO_setb
+         18    1    1          1     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:round_pow2(unsigned int)
+         17    2    2          5     1     1          2     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/../misc/sbrk.c:sbrk
+         17    2    2          4     1     0          6     1     1  ???:std::codecvt<wchar_t, char, __mbstate_t>::codecvt(unsigned long)
+         17    1    1          4     0     0          6     2     2  ???:std::codecvt<char, char, __mbstate_t>::codecvt(unsigned long)
+         16    3    3          2     1     1          3     0     0  ???:std::future_category()
+         16    2    2         10     5     0          3     0     0  /build/glibc-bfm8X4/glibc-2.23/ctype/ctype-info.c:__ctype_init
+         16    2    2          6     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_next_tls_modid
+         16    1    1          6     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_defer_compat.c:_pthread_cleanup_pop_restore
+         16    1    0         16     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/encryption.cpp:decrypt(cache_line_t*)
+         15    2    2          7     0     0          1     0     0  ???:__cxa_guard_release
+         15    2    2          3     0     0          7     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cryptopp/secblock.h:crypto_initialize()
+         15    1    1          3     0     0          8     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_setbuf@@GLIBC_2.2.5
+         14    1    1          7     0     0          0     0     0  ???:std::locale::facet::_S_get_c_name()
+         14    1    1          5     0     0          3     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:map_doit
+         14    1    1          2     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/malloc/morecore.c:__default_morecore
+         12    1    1          4     0     0          8     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_compat.c:_pthread_cleanup_push
+         11    2    2          5     2     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_thread_atexit_impl.c:__call_tls_dtors
+         11    2    2          3     0     0          0     0     0  ???:memcpy@GLIBC_2.2.5
+         11    2    2          1     0     0          1     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/x86_64/brk.c:brk
+         11    1    1          1     0     0          3     0     0  ???:_start
+         10    2    2          4     0     0          3     0     0  /build/glibc-bfm8X4/glibc-2.23/malloc/hooks.c:malloc_hook_ini
+         10    2    2          2     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/syscall-template.S:munmap
+         10    2    1          4     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c:version_check_doit
+         10    1    1          4     1     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_compat.c:_pthread_cleanup_pop
+         10    1    1          3     1     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-cache.c:_dl_unload_cache
+         10    1    1          0     0     0          2     0     0  /usr/include/x86_64-linux-gnu/bits/stdio2.h:initialize_put()
+          9    2    2          3     1     0          2     1     1  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/x86/elision-conf.c:elision_init
+          9    2    2          2     0     0          3     0     0  ???:std::locale::facet::_S_create_c_locale(__locale_struct*&, char const*, __locale_struct*)
+          9    1    1          4     0     0          1     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/encryption.cpp:crypto_initialize()
+          9    1    1          1     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:pop_count(int)
+          9    0    0          8     0     0          0     0     0  ???:_dl_debug_initialize
+          9    0    0          2     0     0          4     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp:main
+          9    0    0          2     0     0          2     0     0  /build/glibc-bfm8X4/glibc-2.23/setjmp/sigjmp.c:__sigjmp_save
+          8    2    2          3     0     0          0     0     0  ???:__log_finite
+          8    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_sin.c:cos
+          8    2    2          3     0     0          0     0     0  ???:__atan2_finite
+          8    2    2          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/posix/../sysdeps/unix/sysv/linux/_exit.c:_Exit
+          8    1    1          4     1     0          2     0     0  ???:std::error_category::error_category()
+          8    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_exp.c:__exp_finite
+          8    1    1          3     0     0          0     0     0  ???:sin
+          6    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcspn.S:strpbrk
+          6    1    1          3     2     0          0     0     0  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::sync()
+          6    1    1          3     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcspn.S:strcspn
+          6    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strspn.S:strspn
+          6    1    0          0     0     0          1     0     0  /usr/include/c++/5/iostream:_GLOBAL__sub_I__Z3lg2i
+          6    0    0          3     2     0          0     0     0  ???:__gnu_cxx::stdio_sync_filebuf<wchar_t, std::char_traits<wchar_t> >::sync()
+          6    0    0          0     0     0          1     0     0  /usr/include/c++/5/iostream:_GLOBAL__sub_I__Z6KeyGenPN8CryptoPP24FixedSizeAlignedSecBlockIjLj60ELb1EEEPKhja
+          6    0    0          0     0     0          1     0     0  /usr/include/c++/5/iostream:_GLOBAL__sub_I__Z14initialize_putv
+          6    0    0          0     0     0          1     0     0  /usr/include/c++/5/iostream:_GLOBAL__sub_I__Z13update_statusii
+          6    0    0          0     0     0          1     0     0  /usr/include/c++/5/iostream:_GLOBAL__sub_I__Z13memcpy_simplePaS_i
+          5    3    3          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp.S:strncasecmp
+          5    2    2          3     2     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp.S:strcmp
+          5    2    2          3     2     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp.S:strcasecmp
+          5    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_floor.S:floor
+          5    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_ceil.S:ceil
+          5    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_asin.c:__acos_finite
+          5    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_floorf.S:floorf
+          5    2    2          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_rint.S:rint
+          5    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_pow.c:__pow_finite
+          5    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_ceilf.S:ceilf
+          5    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_rintf.S:rintf
+          5    1    1          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/posix/../sysdeps/unix/syscall-template.S:uname
+          5    1    1          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/resource/../sysdeps/unix/syscall-template.S:getrlimit
+          5    1    1          0     0     0          4     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../include/list.h:__pthread_initialize_minimal
+          5    0    0          3     0     0          2     1     1  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_get_tls_static_info
+          5    0    0          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_asin.c:__asin_finite
+          5    0    0          2     1     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-machine.h:_dl_sysdep_start
+          5    0    0          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:__write_nocancel
+          5    0    0          0     0     0          2     1     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/pthread-pids.h:__pthread_initialize_minimal
+          4    2    2          0     0     0          1     0     0  /build/glibc-bfm8X4/glibc-2.23/stdlib/exit.c:exit
+          4    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c:_dl_count_modids
+          4    1    1          3     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-altinit.c:dlinit_alt
+          4    1    1          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c:_IO_file_stat
+          3    1    1          3     1     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tsd.c:__libc_dl_error_tsd
+          3    1    1          3     0     0          0     0     0  ???:std::_V2::error_category::~error_category()
+          3    0    0          1     1     1          0     0     0  /build/glibc-bfm8X4/glibc-2.23/malloc/arena.c:malloc_hook_ini
+          3    0    0          0     0     0          1     1     0  /build/glibc-bfm8X4/glibc-2.23/malloc/arena.c:sysmalloc
+          2    2    2          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:_GLOBAL__sub_I__Z3lg2i
+          2    2    2          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp:_GLOBAL__sub_I__Z14initialize_putv
+          2    1    1          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S:write
+          2    1    1          0     0     0          1     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-irel.h:_dl_fixup
+          2    1    1          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/dram.cpp:_GLOBAL__sub_I__Z13memcpy_simplePaS_i
+          2    1    1          0     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/setjmp/../sysdeps/x86_64/bsd-_setjmp.S:_setjmp
+          2    0    0          2     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/dl-debug.c:_dl_debug_state
+          2    0    0          2     0     0          0     0     0  ???:std::error_category::~error_category()
+          2    0    0          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/bits/sigset.h:__pthread_initialize_minimal
+          2    0    0          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/setup-vdso.h:dl_main
+          2    0    0          0     0     0          1     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c:_dl_sysdep_start
+          2    0    0          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/encryption.cpp:_GLOBAL__sub_I__Z6KeyGenPN8CryptoPP24FixedSizeAlignedSecBlockIjLj60ELb1EEEPKhja
+          2    0    0          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:_GLOBAL__sub_I__Z13update_statusii
+          1    1    0          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../elf/dl-sysdep.c:_dl_sysdep_start_cleanup
+          1    0    0          1     0     0          0     0     0  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-osinfo.h:dl_main
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/encryption.cpp
+--------------------------------------------------------------------------------
+Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+
+-- line 217 ----------------------------------------
+ .    .    .  .    .    .  .    .    .  // -----------------------------------------------------------------------------
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  // TODO point these to some sw sets
+ .    .    .  .    .    .  .    .    .  // TODO initialize using prng
+ .    .    .  .    .    .  .    .    .  __m128i enc_subkey[AES_ROUNDS+1];
+ .    .    .  .    .    .  .    .    .  __m128i dec_subkey[AES_ROUNDS+1];
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  void crypto_initialize() 
+ 4    1    1  1    0    0  1    0    0  {
+ .    .    .  .    .    .  .    .    .     byte key[AES::DEFAULT_KEYLENGTH];
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .     memset(key, 0, AES::DEFAULT_KEYLENGTH);
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .     FixedSizeAlignedSecBlock<word32, 4*15> enc_key;
+ .    .    .  .    .    .  .    .    .     FixedSizeAlignedSecBlock<word32, 4*15> dec_key;
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  // ... CacheGrind does not currently support AES instrinsics
+-- line 233 ----------------------------------------
+-- line 235 ----------------------------------------
+ .    .    .  .    .    .  .    .    .  // debugger when it crashes
+ .    .    .  .    .    .  .    .    .  #if !CACHE_GRIND
+ .    .    .  .    .    .  .    .    .     KeyGen(&enc_key, key, sizeof(key), TRUE);
+ .    .    .  .    .    .  .    .    .     KeyGen(&dec_key, key, sizeof(key), FALSE);
+ .    .    .  .    .    .  .    .    .  #endif
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .     memcpy(enc_subkey, enc_key.begin(), (AES_ROUNDS+1) * AES::DEFAULT_KEYLENGTH);
+ .    .    .  .    .    .  .    .    .     memcpy(dec_subkey, dec_key.begin(), (AES_ROUNDS+1) * AES::DEFAULT_KEYLENGTH);
+ 5    0    0  3    0    0  0    0    0  }
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  void encrypt(cache_line_t * line) 
+ .    .    .  .    .    .  .    .    .  {
+ .    .    .  .    .    .  .    .    .  #if !CACHE_GRIND
+ .    .    .  .    .    .  .    .    .     AESNI_AdvancedProcessBlocks(  AESNI_Enc_4_Blocks,
+ .    .    .  .    .    .  .    .    .                                   enc_subkey,
+ .    .    .  .    .    .  .    .    .                                   (byte *) line->data, 
+ .    .    .  .    .    .  .    .    .                                   (byte *) line->data);
+ .    .    .  .    .    .  .    .    .  #endif
+ .    .    .  .    .    .  .    .    .  }
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  void decrypt(cache_line_t * line) 
+16    1    0 16    0    0  0    0    0  {
+ .    .    .  .    .    .  .    .    .  #if !CACHE_GRIND
+ .    .    .  .    .    .  .    .    .     AESNI_AdvancedProcessBlocks(  AESNI_Dec_4_Blocks,
+ .    .    .  .    .    .  .    .    .                                   dec_subkey,
+ .    .    .  .    .    .  .    .    .                                   (byte *) line->data, 
+ .    .    .  .    .    .  .    .    .                                   (byte *) line->data);
+ .    .    .  .    .    .  .    .    .  #endif
+ 2    0    0  0    0    0  0    0    0  }
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  // -----------------------------------------------------------------------------
+ .    .    .  .    .    .  .    .    .  // Debugging interface
+ .    .    .  .    .    .  .    .    .  // -----------------------------------------------------------------------------
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  /*
+ .    .    .  .    .    .  .    .    .  #include "stdio.h"
+ .    .    .  .    .    .  .    .    .  int main() 
+-- line 271 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/dram.cpp
+--------------------------------------------------------------------------------
+    Ir I1mr ILmr    Dr D1mr DLmr    Dw D1mw DLmw 
+
+-- line 3 ----------------------------------------
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  // Misc helpers
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  // this function will be the cause of nearly every LLC miss
+     .    .    .     .    .    .     .    .    .  // we use our own because cachegrind doesn't count correctly for string.h:memcpy
+     .    .    .     .    .    .     .    .    .  void memcpy_simple(data_t * dst, data_t * src, int num_bytes) {
+    16    1    1     0    0    0     0    0    0     data_t * end = dst + num_bytes;
+ 6,208    0    0     0    0    0     0    0    0     while (dst != end) 
+     .    .    .     .    .    .     .    .    .        *dst++ = 
+10,240    0    0 3,072    3    0 3,072   34   16        *src++;
+     .    .    .     .    .    .     .    .    .  }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  // Address translation
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  // translate an arbitrary program address into an address that will map to a 
+     .    .    .     .    .    .     .    .    .  // reserved set
+     .    .    .     .    .    .     .    .    .  addr_t addr_translation_vr(addr_t vaddr) {
+    96    1    1     0    0    0     0    0    0     ASSERT(vaddr % LINE_SIZE == 0); // line alignment
+    48    0    0    48    0    0     0    0    0     addr_t ret = (__memory_quantum * (vaddr / __memory_quantum)) // TODO PERF change to memory_quantum_log and use a shift
+   192    0    0     0    0    0     0    0    0                  << MMEM_UTILIZATION_LG;
+     .    .    .     .    .    .     .    .    .     ret += vaddr & __memory_quantum_mask;
+    96    0    0    48    0    0     0    0    0     return ret;
+    48    0    0    48    0    0     0    0    0  }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  // Interface
+     .    .    .     .    .    .     .    .    .  // -----------------------------------------------------------------------------
+     .    .    .     .    .    .     .    .    .  
+   128    1    1     0    0    0    64    0    0  void dram_write(cache_line_t * line) {
+    96    0    0    32    0    0    32    0    0     addr_t dram_addr = addr_translation_vr(line->addr);
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  #if DEBUG > 1
+     .    .    .     .    .    .     .    .    .     printf("\tDRAM[%d] <- Cache[%d] :: Data: ", dram_addr, line->addr);
+     .    .    .     .    .    .     .    .    .     print_cache_line(line);
+     .    .    .     .    .    .     .    .    .  #endif
+     .    .    .     .    .    .     .    .    .  
+    64    0    0     0    0    0    32    0    0     encrypt(line);
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  #if DEBUG > 1
+     .    .    .     .    .    .     .    .    .     cout << " (Ciphertext: "; print_ciphertext(line); cout << ")" << endl;
+     .    .    .     .    .    .     .    .    .  #endif
+     .    .    .     .    .    .     .    .    .  
+    32    0    0    32    0    0     0    0    0     data_t * host_dram_addr = &memory[dram_addr];
+     .    .    .     .    .    .     .    .    .  
+   128    0    0     0    0    0    32    0    0     ASSERT( is_reserved_memory(host_dram_addr) );
+   128    0    0     0    0    0    32    0    0     ASSERT( is_reserved_memory(host_dram_addr + LINE_SIZE - 1) );
+     .    .    .     .    .    .     .    .    .  
+    96    1    1     0    0    0     0    0    0     memcpy_simple(host_dram_addr, line->data, LINE_SIZE);
+   128    0    0    96    0    0     0    0    0  }
+     .    .    .     .    .    .     .    .    .  
+    64    1    1     0    0    0    32    0    0  void dram_read(cache_line_t * line) {
+    32    0    0    16    0    0    16    0    0     addr_t dram_addr = addr_translation_vr(line->addr);
+    32    0    0    16    0    0     0    0    0     data_t * host_dram_addr = &memory[dram_addr];
+     .    .    .     .    .    .     .    .    .  
+    16    0    0     0    0    0     0    0    0     memcpy_simple(line->data, host_dram_addr, LINE_SIZE);
+     .    .    .     .    .    .     .    .    .  
+    64    0    0     0    0    0    16    0    0     ASSERT( is_reserved_memory(host_dram_addr) );
+    64    0    0     0    0    0    16    0    0     ASSERT( is_reserved_memory(host_dram_addr + LINE_SIZE - 1) );
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  #if DEBUG > 1
+     .    .    .     .    .    .     .    .    .     printf("\tCache[%d] <- DRAM[%d] :: Ciphertext: ", line->addr, dram_addr);
+     .    .    .     .    .    .     .    .    .     print_ciphertext(line);
+     .    .    .     .    .    .     .    .    .  #endif
+     .    .    .     .    .    .     .    .    .  
+    32    0    0     0    0    0     0    0    0     decrypt(line);
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  #if DEBUG > 1
+     .    .    .     .    .    .     .    .    .     cout << " (Data: "; print_cache_line(line); cout << ")" << endl;
+     .    .    .     .    .    .     .    .    .  #endif
+    50    2    2    32    0    0     0    0    0  }
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/x86_64-linux-gnu/bits/string3.h
+--------------------------------------------------------------------------------
+    Ir I1mr ILmr Dr D1mr DLmr     Dw  D1mw  DLmw 
+
+-- line 45 ----------------------------------------
+     .    .    .  .    .    .      .     .     .  # endif
+     .    .    .  .    .    .      .     .     .  #endif
+     .    .    .  .    .    .      .     .     .  
+     .    .    .  .    .    .      .     .     .  
+     .    .    .  .    .    .      .     .     .  __fortify_function void *
+     .    .    .  .    .    .      .     .     .  __NTH (memcpy (void *__restrict __dest, const void *__restrict __src,
+     .    .    .  .    .    .      .     .     .  	       size_t __len))
+     .    .    .  .    .    .      .     .     .  {
+    54    0    0 44    0    0     44     6     6    return __builtin___memcpy_chk (__dest, __src, __len, __bos0 (__dest));
+     .    .    .  .    .    .      .     .     .  }
+     .    .    .  .    .    .      .     .     .  
+     .    .    .  .    .    .      .     .     .  __fortify_function void *
+     .    .    .  .    .    .      .     .     .  __NTH (memmove (void *__dest, const void *__src, size_t __len))
+     .    .    .  .    .    .      .     .     .  {
+     .    .    .  .    .    .      .     .     .    return __builtin___memmove_chk (__dest, __src, __len, __bos0 (__dest));
+     .    .    .  .    .    .      .     .     .  }
+     .    .    .  .    .    .      .     .     .  
+-- line 61 ----------------------------------------
+-- line 82 ----------------------------------------
+     .    .    .  .    .    .      .     .     .  #if !__GNUC_PREREQ (5,0)
+     .    .    .  .    .    .      .     .     .    if (__builtin_constant_p (__len) && __len == 0
+     .    .    .  .    .    .      .     .     .        && (!__builtin_constant_p (__ch) || __ch != 0))
+     .    .    .  .    .    .      .     .     .      {
+     .    .    .  .    .    .      .     .     .        __warn_memset_zero_len ();
+     .    .    .  .    .    .      .     .     .        return __dest;
+     .    .    .  .    .    .      .     .     .      }
+     .    .    .  .    .    .      .     .     .  #endif
+28,846    3    3  0    0    0 14,431 1,590 1,589    return __builtin___memset_chk (__dest, __ch, __len, __bos0 (__dest));
+     .    .    .  .    .    .      .     .     .  }
+     .    .    .  .    .    .      .     .     .  
+     .    .    .  .    .    .      .     .     .  #ifdef __USE_MISC
+     .    .    .  .    .    .      .     .     .  __fortify_function void
+     .    .    .  .    .    .      .     .     .  __NTH (bcopy (const void *__src, void *__dest, size_t __len))
+     .    .    .  .    .    .      .     .     .  {
+     .    .    .  .    .    .      .     .     .    (void) __builtin___memmove_chk (__dest, __src, __len, __bos0 (__dest));
+     .    .    .  .    .    .      .     .     .  }
+-- line 98 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/x86_64-linux-gnu/bits/stdio2.h
+--------------------------------------------------------------------------------
+Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+
+-- line 96 ----------------------------------------
+ .    .    .  .    .    .  .    .    .  {
+ .    .    .  .    .    .  .    .    .    return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+ .    .    .  .    .    .  .    .    .  			__va_arg_pack ());
+ .    .    .  .    .    .  .    .    .  }
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  __fortify_function int
+ .    .    .  .    .    .  .    .    .  printf (const char *__restrict __fmt, ...)
+ .    .    .  .    .    .  .    .    .  {
+10    1    1  0    0    0  2    0    0    return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+ .    .    .  .    .    .  .    .    .  }
+ .    .    .  .    .    .  .    .    .  # elif !defined __cplusplus
+ .    .    .  .    .    .  .    .    .  #  define printf(...) \
+ .    .    .  .    .    .  .    .    .    __printf_chk (__USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+ .    .    .  .    .    .  .    .    .  #  define fprintf(stream, ...) \
+ .    .    .  .    .    .  .    .    .    __fprintf_chk (stream, __USE_FORTIFY_LEVEL - 1, __VA_ARGS__)
+ .    .    .  .    .    .  .    .    .  # endif
+ .    .    .  .    .    .  .    .    .  
+-- line 112 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp
+--------------------------------------------------------------------------------
+         Ir I1mr ILmr         Dr  D1mr DLmr         Dw D1mw DLmw 
+
+-- line 10 ----------------------------------------
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline bool_t is_valid(cache_line_t * line) 
+          .    .    .          .     .    .          .    .    .  {
+          .    .    .          .     .    .          .    .    .     return line->status & MASK_VALID;
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline void set_valid(cache_line_t * line) 
+          .    .    .          .     .    .          .    .    .  {
+         32    0    0         16     0    0          0    0    0     line->status |= MASK_VALID; 
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline void clear_valid(cache_line_t * line) 
+          .    .    .          .     .    .          .    .    .  {
+          .    .    .          .     .    .          .    .    .  // make a macro so that we can distinguish who called this in cachegrind
+          .    .    .          .     .    .          .    .    .  #define __CLEAR_VALID(line) (line->status &= ~MASK_VALID)
+          .    .    .          .     .    .          .    .    .     __CLEAR_VALID(line);
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline addr_t get_offset(addr_t a1) 
+          .    .    .          .     .    .          .    .    .  {
+  4,194,304    1    1          0     0    0  2,097,152    0    0     return a1 & AFIELD_OFFSET_MASK; 
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline addr_t get_set(addr_t a1) 
+          .    .    .          .     .    .          .    .    .  {
+ 23,068,848    1    1  2,097,168     0    0  2,097,168    0    0     int raw_set = ((a1 >> AFIELD_SET_SHIFT) & AFIELD_SET_MASK);
+  6,291,504    0    0  2,097,168     0    0          0    0    0     if (raw_set < __SW_CACHE_set_size) 
+          .    .    .          .     .    .          .    .    .     {
+          .    .    .          .     .    .          .    .    .        return raw_set;
+          .    .    .          .     .    .          .    .    .     } else
+          .    .    .          .     .    .          .    .    .     {
+          .    .    .          .     .    .          .    .    .        // roll over
+          .    .    .          .     .    .          .    .    .        int adjusted_set = raw_set - __SW_CACHE_set_size;
+  2,097,168    0    0          0     0    0  2,097,168    0    0        ASSERT(adjusted_set <= __SW_CACHE_set_size);
+          .    .    .          .     .    .          .    .    .        ASSERT(adjusted_set >= 0);
+          .    .    .          .     .    .          .    .    .        return adjusted_set;
+          .    .    .          .     .    .          .    .    .     }
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline addr_t get_tag(addr_t a1) 
+          .    .    .          .     .    .          .    .    .  { 
+ 14,680,848    0    0  2,097,264     0    0  4,194,528    0    0     return a1 >> AFIELD_TAG_SHIFT; 
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline int get_lru (cache_line_t * line) 
+          .    .    .          .     .    .          .    .    .  { 
+        336    0    0        112     0    0          0    0    0     return ((line->status & (MASK_LRU << SHIFT_LRU)) >> SHIFT_LRU); 
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline void set_lru (cache_line_t * line, int lru) 
+          .    .    .          .     .    .          .    .    .  {
+          .    .    .          .     .    .          .    .    .     line->status = ((lru << SHIFT_LRU) & (MASK_LRU << SHIFT_LRU)) |
+ 92,274,688    1    1          0     0    0 14,680,064    0    0                    (line->status & (-1 - (MASK_LRU << SHIFT_LRU)));
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline bool_t tag_check(addr_t a1, addr_t a2) 
+          .    .    .          .     .    .          .    .    .  {
+          .    .    .          .     .    .          .    .    .     return get_tag(a1) == get_tag(a2); 
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  inline cache_line_t * get_sw_way_base_addr(int way)
+          .    .    .          .     .    .          .    .    .  {
+          .    .    .          .     .    .          .    .    .     // note: the amount of memory in a reserved region may != the amount in sw 
+          .    .    .          .     .    .          .    .    .     // memory
+100,664,724    4    4 50,332,362     0    0          0    0    0     data_t * base = memory + llc_capacity_way * way + __memory_quantum;
+ 67,109,816    1    1          0     0    0 16,777,454    0    0     ASSERT(is_sw_memory(base));
+          .    .    .          .     .    .          .    .    .     return (cache_line_t *) base;
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .     .    .          .    .    .  // Main logic
+          .    .    .          .     .    .          .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  void update_status(addr_t cur_way, addr_t set)
+ 12,582,912    0    0          0     0    0  8,388,608    0    0  {
+          .    .    .          .     .    .          .    .    .     addr_t way;
+          .    .    .          .     .    .          .    .    .     cache_line_t * line;
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     // TODO PERF - THIS IS A PERFORMANCE BOTTLENECK [ if we comment out update_status, we get over 2x speedup! ]
+ 50,331,648    0    0 16,777,216     0    0          0    0    0     for (way = 0; way < __SW_CACHE_associativity; way++)
+          .    .    .          .     .    .          .    .    .     {
+          .    .    .          .     .    .          .    .    .        line = get_sw_way_base_addr(way);
+ 37,748,736    1    1 12,582,912     6    0          0    0    0        line += set;
+ 31,457,280    0    0  2,097,152     0    0          0    0    0        if (way == cur_way)
+          .    .    .          .     .    .          .    .    .           set_lru (line, get_lru (line) >> 1 | 4);
+          .    .    .          .     .    .          .    .    .        else
+          .    .    .          .     .    .          .    .    .           set_lru (line, get_lru (line) >> 1);
+          .    .    .          .     .    .          .    .    .     }
+ 12,582,912    0    0 10,485,760     0    0          0    0    0  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  cache_line_t * evict_line(addr_t addr, addr_t set)
+        128    0    0          0     0    0         96    1    0  {
+          .    .    .          .     .    .          .    .    .     //currently implementing LRU
+          .    .    .          .     .    .          .    .    .     cache_line_t * line;
+          .    .    .          .     .    .          .    .    .     cache_line_t * min_line = NULL;
+          .    .    .          .     .    .          .    .    .     int lru;
+          .    .    .          .     .    .          .    .    .     int min_lru = 100000;
+          .    .    .          .     .    .          .    .    .     addr_t way = 0;
+          .    .    .          .     .    .          .    .    .     addr_t min_way;
+          .    .    .          .     .    .          .    .    .  
+        384    2    2        128     0    0          0    0    0     for (way = 0; way < __SW_CACHE_associativity; way++) 
+          .    .    .          .     .    .          .    .    .     {
+          .    .    .          .     .    .          .    .    .        line = get_sw_way_base_addr(way);
+        224    0    0          0     0    0          0    0    0        line += set;
+          .    .    .          .     .    .          .    .    .        lru = get_lru(line);
+        256    0    0          0     0    0          0    0    0        if (lru < min_lru) 
+          .    .    .          .     .    .          .    .    .        {
+          .    .    .          .     .    .          .    .    .           min_line = line;
+          .    .    .          .     .    .          .    .    .           min_lru = lru;
+          .    .    .          .     .    .          .    .    .           min_way = way;
+          .    .    .          .     .    .          .    .    .        }
+          .    .    .          .     .    .          .    .    .     }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     way = min_way; // avoid compiler complaint
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .     printf(  "\tCache(%d, %d) evicting. min_line: %p, Addr: %d, LRU: %d. Valid: %d\n",
+          .    .    .          .     .    .          .    .    .              min_way, set, min_line,
+          .    .    .          .     .    .          .    .    .              min_line->addr, min_lru, is_valid(min_line));
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+         32    0    0         16     0    0          0    0    0     if (is_valid(min_line))
+          .    .    .          .     .    .          .    .    .     {
+          .    .    .          .     .    .          .    .    .        ASSERT(min_line->addr != addr);
+          .    .    .          .     .    .          .    .    .        dram_write(min_line);
+          .    .    .          .     .    .          .    .    .        clear_valid(min_line);
+          .    .    .          .     .    .          .    .    .     }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     return min_line;
+        144    0    0        112     0    0          0    0    0  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  word_t memory_access(word_t data, addr_t addr, word_t mask, int op) 
+ 23,068,672    2    2          0     0    0 18,874,368    0    0  {
+ 10,485,760    0    0          0     0    0          0    0    0     ASSERT(op == READ || op == WRITE);
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG
+          .    .    .          .     .    .          .    .    .     cache_accesses++;
+          .    .    .          .     .    .          .    .    .  #endif 
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     bool_t hit = FALSE;
+  1,048,576    0    0          0     0    0          0    0    0     word_t return_data = 0;
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     addr_t cur_set = get_set(addr);
+          .    .    .          .     .    .          .    .    .     addr_t cur_way = 0;
+          .    .    .          .     .    .          .    .    .     cache_line_t * hit_line;
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .  #define __OP_STR ((op == READ) ? "R" : "W")
+          .    .    .          .     .    .          .    .    .     printf("\tMEM[%d -> %d,%d] op = %s\n", addr, get_tag(addr), get_set(addr), __OP_STR);
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+  6,291,840    0    0  2,097,280     0    0          0    0    0     for (cur_way = 0; cur_way < __SW_CACHE_associativity; cur_way++) {
+          .    .    .          .     .    .          .    .    .        hit_line = get_sw_way_base_addr(cur_way);
+ 12,583,104    1    1  2,097,168     0    0          0    0    0        hit_line += cur_set;
+          .    .    .          .     .    .          .    .    .        // make sure this whole line doesn't cross into reserved memory
+  8,389,056    0    0          0     0    0  2,097,264    0    0        ASSERT( is_sw_memory( (data_t *) hit_line ) );
+ 10,486,320    0    0          0     0    0  2,097,264    0    0        ASSERT( is_sw_memory(((data_t *) (hit_line + 1)) - 1) );
+  8,389,056    0    0          0     0    0  2,097,264    0    0        ASSERT( !is_reserved_memory( (data_t *) hit_line ) );
+  8,389,056    1    1          0     0    0  2,097,264    0    0        ASSERT( !is_reserved_memory(((data_t *) (hit_line + 1)) - 1) );
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .        // splitting these statements apart is useful for cachegrind
+          .    .    .          .     .    .          .    .    .        bool_t valid = is_valid(hit_line);
+  2,097,264    0    0  2,097,264    98    0          0    0    0        bool_t match = tag_check(hit_line->addr, addr);
+ 14,680,624    0    0          0     0    0          0    0    0        if (valid && match) {
+          .    .    .          .     .    .          .    .    .           hit = TRUE;
+          .    .    .          .     .    .          .    .    .           break;
+          .    .    .          .     .    .          .    .    .        }
+          .    .    .          .     .    .          .    .    .     }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG
+          .    .    .          .     .    .          .    .    .        cache_sets_searched += cur_way + 1;
+          .    .    .          .     .    .          .    .    .  #endif
+-- line 180 ----------------------------------------
+-- line 182 ----------------------------------------
+          .    .    .          .     .    .          .    .    .     if (hit) {
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG
+          .    .    .          .     .    .          .    .    .        cache_hits++;
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .        addr_t offset = get_offset(addr);
+          .    .    .          .     .    .          .    .    .        // TODO enable cross-cache line accesses
+ 16,777,216    0    0          0     0    0          0    0    0        ASSERT(offset <= (LINE_SIZE - sizeof(word_t)));
+          .    .    .          .     .    .          .    .    .  
+  4,194,304    0    0  2,097,152     0    0          0    0    0        if (op == WRITE) {
+  5,242,880    1    1  3,145,728     0    0          0    0    0           word_t tmp = *((word_t *) (hit_line->data + offset));
+          .    .    .          .     .    .          .    .    .           tmp = (data & mask) | (tmp & ~mask);
+  3,145,728    0    0          0     0    0  1,048,576    0    0           *((word_t *) (hit_line->data + offset)) = tmp;
+          .    .    .          .     .    .          .    .    .        } else {
+  1,048,576    0    0  1,048,576     0    0          0    0    0           return_data = *((word_t *) (hit_line->data + offset));
+          .    .    .          .     .    .          .    .    .        }
+          .    .    .          .     .    .          .    .    .  
+  6,291,456    0    0  2,097,152     0    0  2,097,152    0    0        update_status (cur_way, cur_set);
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .        printf("\tHIT ;; Data = ");
+          .    .    .          .     .    .          .    .    .        print_cache_line(hit_line);
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     } else {
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG
+          .    .    .          .     .    .          .    .    .        cache_misses++;
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .        printf("\tMISS ;; \n");
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+         64    1    1         16     0    0         16    0    0        hit_line = evict_line(addr, cur_set);
+          .    .    .          .     .    .          .    .    .  
+         16    0    0          0     0    0         16    0    0        hit_line->addr = addr;
+         32    0    0          0     0    0         16    0    0        dram_read(hit_line);
+          .    .    .          .     .    .          .    .    .        set_valid(hit_line);
+          .    .    .          .     .    .          .    .    .        return_data = memory_access(data, addr, mask, op); // do access over again
+          .    .    .          .     .    .          .    .    .     }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     return return_data;
+ 18,874,368    0    0 14,680,064     0    0          0    0    0  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .     .    .          .    .    .  // Interface
+          .    .    .          .     .    .          .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  word_t memory_read(addr_t addr) 
+  1,048,576    1    1          0     0    0          0    0    0  {
+  4,194,304    0    0          0     0    0          0    0    0     return memory_access(0, addr, 0, READ);
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  void memory_write(word_t data, addr_t addr, word_t mask) 
+          .    .    .          .     .    .          .    .    .  {
+  2,097,152    0    0          0     0    0          0    0    0     memory_access(data, addr, mask, WRITE);
+          .    .    .          .     .    .          .    .    .  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  // touch every line to bring it into the LLC
+          .    .    .          .     .    .          .    .    .  // this function WILL cause LLC misses, but these are OK security-wise
+          .    .    .          .     .    .          .    .    .  void cache_initialize()
+          6    0    0          0     0    0          3    0    0  {
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .        printf("Initializing cache ...\n");
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     int way, i;
+          .    .    .          .     .    .          .    .    .     cache_line_t * way_base;
+          .    .    .          .     .    .          .    .    .     cache_line_t * line_base;
+         24    1    1          8     0    0          0    0    0     for (way = 0; way < __SW_CACHE_associativity; way++) {
+          .    .    .          .     .    .          .    .    .        way_base = get_sw_way_base_addr(way);
+      3,234    0    0          7     0    0          0    0    0        for (i = 0; i < __SW_CACHE_set_size; i++) {
+          .    .    .          .     .    .          .    .    .           line_base = way_base + i;
+      1,589    0    0      1,589   203  203          0    0    0           __CLEAR_VALID(line_base);
+      1,589    0    0          0     0    0      1,589    0    0           line_base->addr = 0xdeadbeef; // whatever
+          .    .    .          .     .    .          .    .    .           memset(line_base->data, 0, LINE_SIZE);
+          .    .    .          .     .    .          .    .    .  #if DEBUG
+          .    .    .          .     .    .          .    .    .           cache_bytes_touched += sizeof(cache_line_t);
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .        }
+          .    .    .          .     .    .          .    .    .     }
+          4    0    0          4     0    0          0    0    0  }
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .  void cache_flush()
+          5    0    0          0     0    0          3    0    0  {
+          .    .    .          .     .    .          .    .    .  #if DEBUG > 1
+          .    .    .          .     .    .          .    .    .        printf("Flushing cache ...\n");
+          .    .    .          .     .    .          .    .    .  #endif
+          .    .    .          .     .    .          .    .    .  
+          .    .    .          .     .    .          .    .    .     int way, i;
+          .    .    .          .     .    .          .    .    .     cache_line_t * line;
+         24    1    1          8     0    0          0    0    0     for (way = 0; way < __SW_CACHE_associativity; way++) {
+          .    .    .          .     .    .          .    .    .        line = get_sw_way_base_addr(way);
+      6,384    0    0      1,596     0    0          0    0    0        for (i = 0; i < __SW_CACHE_set_size; i++)
+      3,210    1    1      1,589 1,573    0         16    0    0           if (is_valid(line + i)) dram_write (line + i);
+          .    .    .          .     .    .          .    .    .     }
+          6    0    0          4     1    0          0    0    0  }
+          .    .    .          .     .    .          .    .    .  
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp
+--------------------------------------------------------------------------------
+         Ir I1mr ILmr         Dr D1mr DLmr Dw D1mw DLmw 
+
+-- line 9 ----------------------------------------
+          .    .    .          .    .    .  .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .    .    .  .    .    .  // Bit manipulation
+          .    .    .          .    .    .  .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // TODO optimize
+          .    .    .          .    .    .  .    .    .  int lg2(int v) 
+          .    .    .          .    .    .  .    .    .  {
+          .    .    .          .    .    .  .    .    .     int r = 0;
+217,060,781    0    0  9,437,425    0    0  0    0    0     while (v >>= 1) r++;
+          .    .    .          .    .    .  .    .    .     return r;
+          .    .    .          .    .    .  .    .    .  }
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // TODO optimize
+          .    .    .          .    .    .  .    .    .  // return # of 1s in v
+          .    .    .          .    .    .  .    .    .  int pop_count(int v) 
+          .    .    .          .    .    .  .    .    .  {
+          .    .    .          .    .    .  .    .    .     int c;
+          9    1    1          1    0    0  0    0    0     for (c = 0; v; c++) v &= v - 1;
+          .    .    .          .    .    .  .    .    .     return c;
+          .    .    .          .    .    .  .    .    .  }
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // return v, rounded up to the next power of 2
+          .    .    .          .    .    .  .    .    .  uint32_t round_pow2(uint32_t v) 
+          .    .    .          .    .    .  .    .    .  {
+          1    1    1          0    0    0  0    0    0     v--;
+          3    0    0          0    0    0  0    0    0     v |= v >> 1;
+          3    0    0          0    0    0  0    0    0     v |= v >> 2;
+          3    0    0          0    0    0  0    0    0     v |= v >> 4;
+          3    0    0          0    0    0  0    0    0     v |= v >> 8;
+          3    0    0          0    0    0  0    0    0     v |= v >> 16;
+          .    .    .          .    .    .  .    .    .     v++;
+          1    0    0          0    0    0  0    0    0     return v;
+          1    0    0          1    0    0  0    0    0  }
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  /* Random numbers ~ not tested yet.  Thanks to George Marsaglia.
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  #define znew (z=36969*(z&65535)+(z>>16))
+          .    .    .          .    .    .  .    .    .  #define wnew (w=18000*(w&65535)+(w>>16))
+          .    .    .          .    .    .  .    .    .  #define MWC ((znew<<16)+wnew )
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  typedef unsigned long UL;
+-- line 49 ----------------------------------------
+-- line 129 ----------------------------------------
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .    .    .  .    .    .  // Common assertions
+          .    .    .          .    .    .  .    .    .  // -----------------------------------------------------------------------------
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // is the candidate byte in the sw memory that we keep on chip?
+          .    .    .          .    .    .  .    .    .  bool_t is_sw_memory(data_t * candidate) 
+          .    .    .          .    .    .  .    .    .  {
+ 62,915,946    1    1 20,971,982    0    0  0    0    0     ASSERT(candidate >= memory);
+          .    .    .          .    .    .  .    .    .     int64_t delta = candidate - memory;
+125,831,892    0    0 20,971,982    0    0  0    0    0     int which_quantum = delta / __memory_quantum;
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .     // reserved quantum are always 0 aligned
+          .    .    .          .    .    .  .    .    .     bool_t region_check = which_quantum & MMEM_UTILIZATION_MASK;
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .     // are we still on an address that can be permanently cached on chip?
+          .    .    .          .    .    .  .    .    .     int num_res_quantum = (which_quantum >> MMEM_UTILIZATION_LG) + 1; 
+ 20,971,982    0    0 20,971,982    0    0  0    0    0     int sw_quantum_capacity = (llc_capacity - (llc_capacity >> MMEM_UTILIZATION_LG)) / __memory_quantum;
+          .    .    .          .    .    .  .    .    .     bool_t capacity_check = (which_quantum - num_res_quantum) < sw_quantum_capacity;
+          .    .    .          .    .    .  .    .    .  
+272,635,766    1    1          0    0    0  0    0    0     return region_check && capacity_check;
+ 20,971,982    0    0 20,971,982    0    0  0    0    0  }
+          .    .    .          .    .    .  .    .    .  
+          .    .    .          .    .    .  .    .    .  // is the candidate byte going to map to a reserved set?
+          .    .    .          .    .    .  .    .    .  bool_t is_reserved_memory(data_t * candidate) 
+          .    .    .          .    .    .  .    .    .  {
+ 12,583,872    0    0  4,194,624    0    0  0    0    0     ASSERT(candidate >= memory);
+          .    .    .          .    .    .  .    .    .     int64_t delta = memory - candidate;
+          .    .    .          .    .    .  .    .    .     int which_quantum = delta / __memory_quantum;
+ 25,167,744    1    1  4,194,624    0    0  0    0    0     return !(which_quantum & MMEM_UTILIZATION_MASK);
+  4,194,626    2    2  4,194,624    0    0  0    0    0  }
+          .    .    .          .    .    .  .    .    .  
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp
+--------------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@ WARNING @@ WARNING @@ WARNING @@ WARNING @@ WARNING @@ WARNING @@ WARNING @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Source file '/home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp' is more recent than input file 'cachegrind.out.7993'.
+@ Annotations may not be correct.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+       Ir I1mr ILmr Dr D1mr DLmr        Dw D1mw DLmw 
+
+-- line 10 ----------------------------------------
+        .    .    .  .    .    .         .    .    .  #include "dram.hpp"
+        .    .    .  .    .    .         .    .    .  #include "cache.hpp"
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  // Program initialization
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  void initialize_put() 
+        7    1    1  1    0    0         4    0    0  {
+        .    .    .  .    .    .         .    .    .     ASSERT( MEMORY_LG >= WORKING_SET_LG );
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG
+        .    .    .  .    .    .         .    .    .     cache_bytes_touched = 0;
+        .    .    .  .    .    .         .    .    .     cache_accesses = 0;
+        .    .    .  .    .    .         .    .    .     cache_hits = 0;
+        .    .    .  .    .    .         .    .    .     cache_misses = 0;
+        .    .    .  .    .    .         .    .    .     cache_sets_searched = 0;
+-- line 26 ----------------------------------------
+-- line 29 ----------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // allocate the reserved sets and memory space offsets
+        .    .    .  .    .    .         .    .    .     if (LLC == L1)
+        .    .    .  .    .    .         .    .    .     {
+        .    .    .  .    .    .         .    .    .        llc_capacity = L1_CAPACITY;
+        .    .    .  .    .    .         .    .    .        llc_associativity = L1_ASSOC;
+        .    .    .  .    .    .         .    .    .     } else if (LLC == L2) 
+        .    .    .  .    .    .         .    .    .     {
+        1    0    0  0    0    0         1    0    0        llc_capacity = L2_CAPACITY;
+        1    0    0  0    0    0         1    1    1        llc_associativity = L2_ASSOC;
+        .    .    .  .    .    .         .    .    .     } else if (LLC == L3) 
+        .    .    .  .    .    .         .    .    .     {
+        .    .    .  .    .    .         .    .    .        llc_capacity = L3_CAPACITY;
+        .    .    .  .    .    .         .    .    .        llc_associativity = L3_ASSOC;
+        .    .    .  .    .    .         .    .    .     }
+        1    0    0  0    0    0         1    0    0     llc_capacity_way = llc_capacity / llc_associativity;
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // Initialize memory quantums: the size of reserved/sw chunks of contiguous 
+        .    .    .  .    .    .         .    .    .     // memory
+        1    1    1  0    0    0         1    0    0     __memory_quantum = llc_capacity_way / (1 << MMEM_UTILIZATION_LG);
+        1    0    0  0    0    0         1    0    0     __sw_memory_quantum = llc_capacity_way - __memory_quantum;
+        .    .    .  .    .    .         .    .    .     ASSERT( !(__sw_memory_quantum % __memory_quantum) );
+        4    0    0  0    0    0         1    0    0     ASSERT( pop_count(__memory_quantum) == 1 );
+        3    0    0  1    0    0         1    0    0     __memory_quantum_mask = __memory_quantum - 1;
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     //
+        .    .    .  .    .    .         .    .    .     // Allocate all of main memory using normal memory allocation ---------------
+        .    .    .  .    .    .         .    .    .     //
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // check 32b address space overflow
+        .    .    .  .    .    .         .    .    .     ASSERT( (sizeof(addr_t) * 8 - 1) > (MMEM_UTILIZATION_LG + MEMORY_LG));
+        .    .    .  .    .    .         .    .    .     addr_t requested_memory = (1 << MEMORY_LG);
+        .    .    .  .    .    .         .    .    .     addr_t allocation_size = requested_memory;
+        .    .    .  .    .    .         .    .    .     printf("??%d\n", allocation_size);
+        6    0    0  1    0    0         0    0    0     allocation_size *= 1 + (llc_capacity / allocation_size);
+        .    .    .  .    .    .         .    .    .     printf("??%d\n", allocation_size);
+        .    .    .  .    .    .         .    .    .     // we still wanted requested_memory after initialization shift
+       10    1    1  1    0    0         0    0    0     while (allocation_size - llc_capacity < requested_memory) 
+        1    0    0  0    0    0         0    0    0        allocation_size <<= 1;
+        .    .    .  .    .    .         .    .    .     allocation_size <<= MMEM_UTILIZATION_LG; // extra space for sparse DRAM
+        2    0    0  0    0    0         0    0    0     allocation_size *= sizeof(data_t);
+        4    0    0  0    0    0         2    0    0     memory_raw = (data_t *) malloc(allocation_size);
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // Initialization shift
+        .    .    .  .    .    .         .    .    .     // Get a pointer to memory such that memory will point to a cache line that
+        .    .    .  .    .    .         .    .    .     // maps to set 0 in the LLC
+        3    0    0  1    0    0         0    0    0     memory = memory_raw + llc_capacity;
+        5    0    0  0    0    0         1    0    0     memory = memory - ( ((int64_t) memory) % llc_capacity);
+        .    .    .  .    .    .         .    .    .     // check llc alignment
+        4    1    1  0    0    0         0    0    0     ASSERT( !( ((int64_t) memory) & (llc_capacity - 1)) );
+        3    0    0  0    0    0         1    0    0     memory_size = (memory_raw + allocation_size) - memory;
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // --------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // Initialize crypto tools
+        .    .    .  .    .    .         .    .    .     // TODO store key somewhere
+        1    0    0  0    0    0         1    0    0     crypto_initialize();
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // TODO pad memory so that stack is in user sets?
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // TODO pad instructions?
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // Initialize the cache dimensions
+        7    1    1  1    0    0         1    0    0     __SW_CACHE_set_size = __sw_memory_quantum / sizeof(cache_line_t);
+        4    0    0  0    0    0         3    0    0     __SW_CACHE_set_size_envelope_lg = lg2(round_pow2(__SW_CACHE_set_size));
+        3    0    0  1    0    0         1    0    0     __SW_CACHE_associativity = llc_associativity - 1; // TODO make this more general?
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // Touch every line in the cache to bring it into the LLC
+        2    0    0  0    0    0         1    0    0     cache_initialize();
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG
+        .    .    .  .    .    .         .    .    .     cout << "Protecting: L" << LLC << " cache" << endl;
+        .    .    .  .    .    .         .    .    .     cout <<  "Memory quantum: reserved=" << 
+        .    .    .  .    .    .         .    .    .              __memory_quantum << ", sw=" << 
+        .    .    .  .    .    .         .    .    .              __sw_memory_quantum << endl;
+        .    .    .  .    .    .         .    .    .     cout <<  "Memory raw/offset: "<< memory_raw << "/" << 
+        .    .    .  .    .    .         .    .    .              memory - memory_raw << endl;
+-- line 105 ----------------------------------------
+-- line 119 ----------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG > 1
+        .    .    .  .    .    .         .    .    .        printf("Loading program ...\n");
+        .    .    .  .    .    .         .    .    .  #endif
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     // load the user program / its data into dram
+        .    .    .  .    .    .         .    .    .     int i;
+        .    .    .  .    .    .         .    .    .     cache_line_t tmp_line;
+       48    1    1  0    0    0         0    0    0     for (i = 0; i < WORKING_SET; i += LINE_SIZE) 
+        .    .    .  .    .    .         .    .    .     {
+       16    0    0  0    0    0        16    0    0        tmp_line.addr = i;
+        .    .    .  .    .    .         .    .    .        memset(tmp_line.data, 0, LINE_SIZE);
+       64    0    0  0    0    0        16    0    0        *((word_t*) &tmp_line.data) = i / LINE_SIZE;
+       32    0    0  0    0    0        16    0    0        dram_write(&tmp_line);
+        .    .    .  .    .    .         .    .    .     }
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  /* #if DEBUG */
+        .    .    .  .    .    .         .    .    .  /*         printf ("----------------------------------------------------\n"); */
+        .    .    .  .    .    .         .    .    .  /*    for (i = 0; i < WORKING_SET; i += LINE_SIZE) { */
+        .    .    .  .    .    .         .    .    .  /*       cache->addr = i; */
+        .    .    .  .    .    .         .    .    .  /*       dram_read(cache); */
+        .    .    .  .    .    .         .    .    .  /*    } */
+        .    .    .  .    .    .         .    .    .  /*         printf ("----------------------------------------------------\n"); */
+        .    .    .  .    .    .         .    .    .  /* #endif */
+        .    .    .  .    .    .         .    .    .  
+        8    0    0  6    2    0         0    0    0  }
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  // Toy program
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // cache line stride
+        .    .    .  .    .    .         .    .    .  #define ADDR(i) ( (i << LINE_SIZE_LG) & (WORKING_SET-1) )
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // unit stride
+        .    .    .  .    .    .         .    .    .  //#define ADDR(i) ( i & (WORKING_SET-1)  )
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // PR access pattern
+        .    .    .  .    .    .         .    .    .  //#define ADDR(i) ( ((i + 523)*253573) & (WORKING_SET-1) & ~(LINE_SIZE-1) )
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  float run_put()
+        4    1    1  0    0    0         2    0    0  {
+        .    .    .  .    .    .         .    .    .     int i, j;
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG || TIME
+        .    .    .  .    .    .         .    .    .  	clockmark_t time1 = ktiming_getmark();
+        .    .    .  .    .    .         .    .    .  #endif
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .      word_t tmp = 0;
+        .    .    .  .    .    .         .    .    .      int addr = 0;
+3,145,729    0    0  0    0    0         0    0    0      for (i = 0; i < EXPERIMENT_ROUNDS; i++) {
+6,291,456    1    1  0    0    0 1,048,576    0    0          addr = ADDR(i);
+2,097,152    0    0  0    0    0 1,048,576    0    0          tmp = memory_read(addr);
+        .    .    .  .    .    .         .    .    .          tmp += 1;
+4,194,304    0    0  0    0    0 1,048,576    0    0          memory_write(tmp, addr, -1);
+        .    .    .  .    .    .         .    .    .      }
+        .    .    .  .    .    .         .    .    .  #if DEBUG || TIME
+        .    .    .  .    .    .         .    .    .     clockmark_t time2 = ktiming_getmark();
+        .    .    .  .    .    .         .    .    .     return ktiming_diff_sec(&time1, &time2);
+        .    .    .  .    .    .         .    .    .  #endif
+        .    .    .  .    .    .         .    .    .     return 0.0;
+        5    0    0  3    1    0         0    0    0  }
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  float check_performance()
+        .    .    .  .    .    .         .    .    .  {
+        .    .    .  .    .    .         .    .    .     int i;
+        .    .    .  .    .    .         .    .    .     data_t * mem = (data_t *) malloc(1 << MEMORY_LG);
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  	clockmark_t time1 = ktiming_getmark();
+        .    .    .  .    .    .         .    .    .  
+-- line 188 ----------------------------------------
+-- line 230 ----------------------------------------
+        .    .    .  .    .    .         .    .    .     }
+        .    .    .  .    .    .         .    .    .  }
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  // Interpretter
+        .    .    .  .    .    .         .    .    .  // -----------------------------------------------------------------------------
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  int main()
+        1    0    0  0    0    0         0    0    0  {
+        1    0    0  0    0    0         1    0    0     initialize_put();
+        .    .    .  .    .    .         .    .    .  
+        1    0    0  0    0    0         1    0    0     float sw_ascend_runtime = run_put();
+        1    0    0  0    0    0         1    0    0     cache_flush();
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG
+        .    .    .  .    .    .         .    .    .     //check_put();
+        .    .    .  .    .    .         .    .    .     ASSERT(cache_accesses == cache_hits + cache_misses);
+        .    .    .  .    .    .         .    .    .     float cache_miss_rate = ((float) cache_misses) / ((float) cache_accesses);
+        .    .    .  .    .    .         .    .    .     float avg_cache_sets_searched = ((float) cache_sets_searched) / ((float) cache_accesses);
+        .    .    .  .    .    .         .    .    .     cout  << "Cache accesses = " << cache_accesses << ", avg sets searched per access=" 
+        .    .    .  .    .    .         .    .    .           << avg_cache_sets_searched << ", miss rate =" << cache_miss_rate << endl;
+        .    .    .  .    .    .         .    .    .  #endif
+        .    .    .  .    .    .         .    .    .  
+        2    0    0  1    0    0         1    0    0     free(memory_raw);
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .  #if DEBUG || TIME
+        .    .    .  .    .    .         .    .    .     float native_runtime = check_performance();
+        .    .    .  .    .    .         .    .    .     float slowdown = sw_ascend_runtime / native_runtime;
+        .    .    .  .    .    .         .    .    .  	printf(  "%d,%d,%d,%d,%f,%f,%f\n", 
+        .    .    .  .    .    .         .    .    .              LLC, MMEM_UTILIZATION_LG, WORKING_SET_LG, WORK_LG, 
+        .    .    .  .    .    .         .    .    .              sw_ascend_runtime, native_runtime, slowdown);
+        .    .    .  .    .    .         .    .    .  #endif
+        .    .    .  .    .    .         .    .    .  
+        .    .    .  .    .    .         .    .    .     return 0;
+        5    2    2  1    0    0         0    0    0  }
+        .    .    .  .    .    .         .    .    .  
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/5/iostream
+--------------------------------------------------------------------------------
+Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+
+-- line 66 ----------------------------------------
+ .    .    .  .    .    .  .    .    .    extern wistream wcin;		/// Linked to standard input
+ .    .    .  .    .    .  .    .    .    extern wostream wcout;	/// Linked to standard output
+ .    .    .  .    .    .  .    .    .    extern wostream wcerr;	/// Linked to standard error (unbuffered)
+ .    .    .  .    .    .  .    .    .    extern wostream wclog;	/// Linked to standard error (buffered)
+ .    .    .  .    .    .  .    .    .  #endif
+ .    .    .  .    .    .  .    .    .    //@}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .    // For construction of filebuffers for cout, cin, cerr, clog et. al.
+30    1    0  0    0    0  5    0    0    static ios_base::Init __ioinit;
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  _GLIBCXX_END_NAMESPACE_VERSION
+ .    .    .  .    .    .  .    .    .  } // namespace
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  #endif /* _GLIBCXX_IOSTREAM */
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cryptopp/misc.h
+--------------------------------------------------------------------------------
+ Ir I1mr ILmr Dr D1mr DLmr  Dw D1mw DLmw 
+
+-- line 504 ----------------------------------------
+  .    .    .  .    .    .   .    .    .  	__stosw((word16 *)(size_t)p, 0, n);
+  .    .    .  .    .    .   .    .    .  #endif
+  .    .    .  .    .    .   .    .    .  }
+  .    .    .  .    .    .   .    .    .  
+  .    .    .  .    .    .   .    .    .  template<> inline void SecureWipeBuffer(word32 *buf, size_t n)
+  .    .    .  .    .    .   .    .    .  {
+  .    .    .  .    .    .   .    .    .  	volatile word32 *p = buf;
+  .    .    .  .    .    .   .    .    .  #ifdef __GNUC__
+126    0    0  0    0    0 120    0    0  	asm volatile("rep stosl" : "+c"(n), "+D"(p) : "a"(0) : "memory");
+  .    .    .  .    .    .   .    .    .  #else
+  .    .    .  .    .    .   .    .    .  	__stosd((unsigned long *)(size_t)p, 0, n);
+  .    .    .  .    .    .   .    .    .  #endif
+  .    .    .  .    .    .   .    .    .  }
+  .    .    .  .    .    .   .    .    .  
+  .    .    .  .    .    .   .    .    .  template<> inline void SecureWipeBuffer(word64 *buf, size_t n)
+  .    .    .  .    .    .   .    .    .  {
+  .    .    .  .    .    .   .    .    .  #if CRYPTOPP_BOOL_X64
+-- line 520 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cryptopp/secblock.h
+--------------------------------------------------------------------------------
+Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+
+-- line 177 ----------------------------------------
+ .    .    .  .    .    .  .    .    .  		else
+ .    .    .  .    .    .  .    .    .  			return m_fallbackAllocator.allocate(n);
+ .    .    .  .    .    .  .    .    .  	}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  	pointer allocate(size_type n, const void *hint)
+ .    .    .  .    .    .  .    .    .  	{
+ .    .    .  .    .    .  .    .    .  		if (n <= S && !m_allocated)
+ .    .    .  .    .    .  .    .    .  		{
+ 1    0    0  0    0    0  1    0    0  			m_allocated = true;
+ .    .    .  .    .    .  .    .    .  			return GetAlignedArray();
+ .    .    .  .    .    .  .    .    .  		}
+ .    .    .  .    .    .  .    .    .  		else
+ .    .    .  .    .    .  .    .    .  			return m_fallbackAllocator.allocate(n, hint);
+ .    .    .  .    .    .  .    .    .  	}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  	void deallocate(void *p, size_type n)
+ .    .    .  .    .    .  .    .    .  	{
+ 2    0    0  1    0    0  0    0    0  		if (p == GetAlignedArray())
+ .    .    .  .    .    .  .    .    .  		{
+34    1    1 32    0    0  0    0    0  			assert(n <= S);
+ 2    1    1  1    0    0  0    0    0  			assert(m_allocated);
+ 2    0    0  0    0    0  2    0    0  			m_allocated = false;
+ .    .    .  .    .    .  .    .    .  			SecureWipeArray((pointer)p, n);
+ .    .    .  .    .    .  .    .    .  		}
+ .    .    .  .    .    .  .    .    .  		else
+ .    .    .  .    .    .  .    .    .  			m_fallbackAllocator.deallocate(p, n);
+ .    .    .  .    .    .  .    .    .  	}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  	pointer reallocate(pointer p, size_type oldSize, size_type newSize, bool preserve)
+ .    .    .  .    .    .  .    .    .  	{
+-- line 206 ----------------------------------------
+-- line 239 ----------------------------------------
+ .    .    .  .    .    .  .    .    .  {
+ .    .    .  .    .    .  .    .    .  public:
+ .    .    .  .    .    .  .    .    .  	typedef typename A::value_type value_type;
+ .    .    .  .    .    .  .    .    .  	typedef typename A::pointer iterator;
+ .    .    .  .    .    .  .    .    .  	typedef typename A::const_pointer const_iterator;
+ .    .    .  .    .    .  .    .    .  	typedef typename A::size_type size_type;
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  	explicit SecBlock(size_type size=0)
+ 5    1    1  0    0    0  4    0    0  		: m_size(size) {m_ptr = m_alloc.allocate(size, NULL);}
+ .    .    .  .    .    .  .    .    .  	SecBlock(const SecBlock<T, A> &t)
+ .    .    .  .    .    .  .    .    .  		: m_size(t.m_size) {m_ptr = m_alloc.allocate(m_size, NULL); memcpy_s(m_ptr, m_size*sizeof(T), t.m_ptr, m_size*sizeof(T));}
+ .    .    .  .    .    .  .    .    .  	SecBlock(const T *t, size_type len)
+ .    .    .  .    .    .  .    .    .  		: m_size(len)
+ .    .    .  .    .    .  .    .    .  	{
+ .    .    .  .    .    .  .    .    .  		m_ptr = m_alloc.allocate(len, NULL);
+ .    .    .  .    .    .  .    .    .  		if (t == NULL)
+ .    .    .  .    .    .  .    .    .  			memset_z(m_ptr, 0, len*sizeof(T));
+ .    .    .  .    .    .  .    .    .  		else
+ .    .    .  .    .    .  .    .    .  			memcpy(m_ptr, t, len*sizeof(T));
+ .    .    .  .    .    .  .    .    .  	}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  	~SecBlock()
+ 1    0    0  1    0    0  0    0    0  		{m_alloc.deallocate(m_ptr, m_size);}
+ .    .    .  .    .    .  .    .    .  
+ .    .    .  .    .    .  .    .    .  #ifdef __BORLANDC__
+ .    .    .  .    .    .  .    .    .  	operator T *() const
+ .    .    .  .    .    .  .    .    .  		{return (T*)m_ptr;}
+ .    .    .  .    .    .  .    .    .  #else
+ .    .    .  .    .    .  .    .    .  	operator const void *() const
+ .    .    .  .    .    .  .    .    .  		{return m_ptr;}
+ .    .    .  .    .    .  .    .    .  	operator void *()
+-- line 269 ----------------------------------------
+
+--------------------------------------------------------------------------------
+The following files chosen for auto-annotation could not be found:
+--------------------------------------------------------------------------------
+  /build/glibc-bfm8X4/glibc-2.23/posix/../sysdeps/unix/sysv/linux/_exit.c
+  /build/glibc-bfm8X4/glibc-2.23/libio/fileops.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/../elf/dl-sysdep.c
+  /build/glibc-bfm8X4/glibc-2.23/setjmp/sigjmp.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_ceil.S
+  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_defer_compat.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tls.c
+  /build/glibc-bfm8X4/glibc-2.23/libio/filedoalloc.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/setup-vdso.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-osinfo.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/./dl-map-segments.h
+  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/sysv/linux/x86_64/brk.c
+  /build/glibc-bfm8X4/glibc-2.23/malloc/morecore.c
+  /build/glibc-bfm8X4/glibc-2.23/debug/printf_chk.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memcpy.S
+  /build/glibc-bfm8X4/glibc-2.23/locale/uselocale.c
+  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/generic/dl-hash.h
+  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_thread_atexit_impl.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../strcmp.S
+  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/wctob.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/rtld.c
+  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/sysv/linux/wordsize-64/xstat.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_rintf.S
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../nptl/pthread_mutex_lock.c
+  /build/glibc-bfm8X4/glibc-2.23/malloc/malloc.c
+  /build/glibc-bfm8X4/glibc-2.23/libio/genops.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcspn.S
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_sin.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-environ.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_ceilf.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-version.c
+  /build/glibc-bfm8X4/glibc-2.23/ctype/ctype-info.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86/cpu-features.c
+  /build/glibc-bfm8X4/glibc-2.23/csu/../csu/libc-start.c
+  /build/glibc-bfm8X4/glibc-2.23/malloc/arena.c
+  /build/glibc-bfm8X4/glibc-2.23/misc/init-misc.c
+  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/btowc.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp.S
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strrchr.S
+  /build/glibc-bfm8X4/glibc-2.23/nptl/cleanup_compat.c
+  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/sysv/linux/wordsize-64/mmap.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-reloc.c
+  /build/glibc-bfm8X4/glibc-2.23/libio/iofflush.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/x86_64/brk.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/nptl-init.c
+  /build/glibc-bfm8X4/glibc-2.23/stdlib/exit.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/do-rel.h
+  /build/glibc-bfm8X4/glibc-2.23/malloc/hooks.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/pthread_mutex_unlock.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-init.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/get-dynamic-info.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/../string/bits/string2.h
+  /build/glibc-bfm8X4/glibc-2.23/csu/../csu/init-first.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/pthread_once.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-minimal.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/register-atfork.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../bits/stdlib-bsearch.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-hwcaps.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_pow.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strcmp-sse2-unaligned.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-irel.h
+  /build/glibc-bfm8X4/glibc-2.23/iconv/gconv_simple.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/strspn.S
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/memcpy.S
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/cacheinfo.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/libc_pthread_init.c
+  /build/glibc-bfm8X4/glibc-2.23/string/strdup.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-object.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_rint.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-addr.c
+  /build/glibc-bfm8X4/glibc-2.23/stdio-common/_itoa.c
+  /build/glibc-bfm8X4/glibc-2.23/wcsmbs/./wcsmbsload.h
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/bits/sigset.h
+  /build/glibc-bfm8X4/glibc-2.23/string/wordcopy.c
+  /build/glibc-bfm8X4/glibc-2.23/csu/../sysdeps/unix/sysv/linux/x86_64/init-first.c
+  /build/glibc-bfm8X4/glibc-2.23/posix/../sysdeps/unix/syscall-template.S
+  /build/glibc-bfm8X4/glibc-2.23/debug/../libio/libioP.h
+  /build/glibc-bfm8X4/glibc-2.23/io/../sysdeps/unix/syscall-template.S
+  /build/glibc-bfm8X4/glibc-2.23/nptl/unregister-atfork.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memcmp.S
+  /build/glibc-bfm8X4/glibc-2.23/string/../string/memmove.c
+  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/unix/sysv/linux/x86/time.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/pthread-pids.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/../elf/dl-runtime.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/posix/dl-fileid.h
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_floor.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../memset.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-debug.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../include/list.h
+  /build/glibc-bfm8X4/glibc-2.23/stdio-common/printf-parse.h
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_exp.c
+  /build/glibc-bfm8X4/glibc-2.23/resource/../sysdeps/unix/syscall-template.S
+  /build/glibc-bfm8X4/glibc-2.23/stdio-common/vfprintf.c
+  /build/glibc-bfm8X4/glibc-2.23/setjmp/../sysdeps/x86_64/bsd-_setjmp.S
+  /build/glibc-bfm8X4/glibc-2.23/setjmp/../sysdeps/x86_64/setjmp.S
+  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_finalize.c
+  /build/glibc-bfm8X4/glibc-2.23/time/../sysdeps/unix/sysv/linux/x86/gettimeofday.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strchr.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-cache.c
+  /build/glibc-bfm8X4/glibc-2.23/csu/../sysdeps/generic/dl-hash.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/unix/sysv/linux/dl-vdso.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/e_asin.c
+  /build/glibc-bfm8X4/glibc-2.23/math/../sysdeps/x86_64/fpu/multiarch/s_floorf.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/../misc/sbrk.c
+  /build/glibc-bfm8X4/glibc-2.23/wctype/wctype_l.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/strlen.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-open.c
+  /build/glibc-bfm8X4/glibc-2.23/locale/newlocale.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-tsd.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/x86_64/sigaction.c
+  /build/glibc-bfm8X4/glibc-2.23/misc/../sysdeps/unix/syscall-template.S
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-load.c
+  /build/glibc-bfm8X4/glibc-2.23/stdlib/cxa_atexit.c
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/x86/elision-conf.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-machine.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/../sysdeps/x86_64/dl-trampoline.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-fini.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-misc.c
+  /build/glibc-bfm8X4/glibc-2.23/string/../sysdeps/x86_64/multiarch/../strchr.S
+  /build/glibc-bfm8X4/glibc-2.23/nptl/../sysdeps/unix/sysv/linux/futex-internal.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-profstub.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-lookup.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/./dl-load.h
+  /build/glibc-bfm8X4/glibc-2.23/libio/libioP.h
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-altinit.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-error.c
+  /build/glibc-bfm8X4/glibc-2.23/misc/sbrk.c
+  /build/glibc-bfm8X4/glibc-2.23/elf/dl-deps.c
+
+--------------------------------------------------------------------------------
+ Ir I1mr ILmr  Dr D1mr DLmr  Dw D1mw DLmw 
+--------------------------------------------------------------------------------
+100    3    3 100   12    2 100   40   51  percentage of events annotated
+

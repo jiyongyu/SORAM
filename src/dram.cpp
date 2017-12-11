@@ -1,0 +1,76 @@
+
+#include "dram.hpp"
+
+// -----------------------------------------------------------------------------
+// Misc helpers
+// -----------------------------------------------------------------------------
+
+// this function will be the cause of nearly every LLC miss
+// we use our own because cachegrind doesn't count correctly for string.h:memcpy
+void memcpy_simple(data_t * dst, data_t * src, int num_bytes) {
+   data_t * end = dst + num_bytes;
+   while (dst != end) 
+      *dst++ = 
+      *src++;
+}
+
+// -----------------------------------------------------------------------------
+// Address translation
+// -----------------------------------------------------------------------------
+
+// translate an arbitrary program address into an address that will map to a 
+// reserved set
+addr_t addr_translation_vr(addr_t vaddr) {
+   ASSERT(vaddr % LINE_SIZE == 0); // line alignment
+   addr_t ret = (__memory_quantum * (vaddr / __memory_quantum)) // TODO PERF change to memory_quantum_log and use a shift
+                << MMEM_UTILIZATION_LG;
+   ret += vaddr & __memory_quantum_mask;
+   return ret;
+}
+
+// -----------------------------------------------------------------------------
+// Interface
+// -----------------------------------------------------------------------------
+
+void dram_write(cache_line_t * line) {
+   addr_t dram_addr = addr_translation_vr(line->addr);
+
+#if DEBUG > 1
+   printf("\tDRAM[%d] <- Cache[%d] :: Data: ", dram_addr, line->addr);
+   print_cache_line(line);
+#endif
+
+   encrypt(line);
+
+#if DEBUG > 1
+   cout << " (Ciphertext: "; print_ciphertext(line); cout << ")" << endl;
+#endif
+
+   data_t * host_dram_addr = &memory[dram_addr];
+
+   ASSERT( is_reserved_memory(host_dram_addr) );
+   ASSERT( is_reserved_memory(host_dram_addr + LINE_SIZE - 1) );
+
+   memcpy_simple(host_dram_addr, line->data, LINE_SIZE);
+}
+
+void dram_read(cache_line_t * line) {
+   addr_t dram_addr = addr_translation_vr(line->addr);
+   data_t * host_dram_addr = &memory[dram_addr];
+
+   memcpy_simple(line->data, host_dram_addr, LINE_SIZE);
+
+   ASSERT( is_reserved_memory(host_dram_addr) );
+   ASSERT( is_reserved_memory(host_dram_addr + LINE_SIZE - 1) );
+
+#if DEBUG > 1
+   printf("\tCache[%d] <- DRAM[%d] :: Ciphertext: ", line->addr, dram_addr);
+   print_ciphertext(line);
+#endif
+
+   decrypt(line);
+
+#if DEBUG > 1
+   cout << " (Data: "; print_cache_line(line); cout << ")" << endl;
+#endif
+}

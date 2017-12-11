@@ -1,0 +1,7 @@
+to build:
+
+$ make static dynamic test
+
+to install:
+
+$ sudo make install

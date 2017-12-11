@@ -1,0 +1,40 @@
+
+import sys
+
+from util import *
+
+'''
+Usage:
+$ python grind.py [clean|run|check|verbose]
+   clean: clean out cachegrind files
+   run: run program and perform cache miss analysis
+   check: check the results of a 'python grind.py run' for security problems (i.e., unintended LLC misses)
+   verbose: get a line-by-line source code analysis of cache misses
+'''
+
+# ------------------------------------------------------------------------------
+# Modes
+# ------------------------------------------------------------------------------
+
+# TODO add a performance bug check that goes through each file and makes sure assert() isn't used anywhere
+
+if sys.argv[1] == 'clean':
+   grind_clean()
+
+elif sys.argv[1] == 'run':
+   grind_run()
+
+elif sys.argv[1] == 'check':
+   fails = grind_check()
+   if fails > 0: 
+      print str(fails) + " failures."
+      assert False
+   else: print PASS
+
+elif sys.argv[1] == 'verbose':
+   grind_verbose()
+
+else: 
+   print "Unrecognized command: " + sys.argv[1]
+   assert False
+

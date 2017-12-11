@@ -1,0 +1,31 @@
+--------------------------------------------------------------------------------
+I1 cache:         32768 B, 64 B, 4-way associative
+D1 cache:         32768 B, 64 B, 8-way associative
+LL cache:         8388608 B, 64 B, 16-way associative
+Command:          ./virtual_ascend
+Data file:        cachegrind.out.181
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Thresholds:       0.1 100 100 100 100 100 100 100 100
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+           Ir  I1mr  ILmr          Dr   D1mr  DLmr         Dw  D1mw  DLmw 
+--------------------------------------------------------------------------------
+1,404,367,880 1,783 1,664 234,433,801 16,304 8,198 84,112,796 4,055 3,181  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+         Ir I1mr ILmr         Dr  D1mr  DLmr         Dw  D1mw  DLmw  file:function
+--------------------------------------------------------------------------------
+503,327,568    2    2 83,887,928     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:is_sw_memory(signed char*)
+383,778,816    3    3 85,983,232     6     0 37,748,736     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:update_status(int, int)
+232,789,312    9    9 41,943,808    99     0 42,992,480     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_access(long, int, long, int)
+217,060,781    0    0  9,437,425     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:lg2(int)
+ 41,946,240    1    1 12,583,872     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/util.cpp:is_reserved_memory(signed char*)
+ 15,728,650    2    2          3     0     0  3,145,730     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/virtual_ascend.cpp:run_put()
+  5,242,880    1    1          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_read(int)
+  2,097,152    0    0          0     0     0          0     0     0  /home/Jiyong_Yu/Coursework/CS598/SORAM/root/cache.cpp:memory_write(long, int, long)
+

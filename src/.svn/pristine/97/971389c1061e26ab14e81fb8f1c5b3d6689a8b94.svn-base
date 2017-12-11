@@ -1,0 +1,42 @@
+
+--------------------------------------------------------------------------------
+TODO
+--------------------------------------------------------------------------------
+
+Reminders
+   - Turn crypto++ -g off and set -O3 or -O2
+
+Minor
+   - Performance test that walks whole cache lines, not just the first word of each line
+      Prereq: Real encryption/decryption
+   - Support for accesses that cross cache line boundary
+   - Performance optimize LRU logic
+   - Support for larger address sizes
+
+Major
+   - Support for non-power-of-two LLC sizes
+   - Real Path ORAM logic for LLC misses
+   - Security issue: stack
+   - Security issue: instructions 
+   - Need a more real way to evaluate security --- have the OS read pages from DRAM after the interpretter does a cache flush
+
+Done
+   - Simple cache replacement
+   - Performance test harness with linear/random stride
+   - Real encryption/decryption per line
+
+--------------------------------------------------------------------------------
+Notes
+--------------------------------------------------------------------------------
+
+// -    does cachegrind check evictions? --> no, but if lines get evicted that will cause req misses in most cases
+// -    how to store page tables?  predict TLB misses?  NO!  All we need to do is
+//      determine if va _may_ touch a page table that we have cached.  If not, bring that page in.
+//
+
+// TODO problems with setting LLC == L2:
+// - we won't see evictions from L3 for I$ (even if they would have been there if the LLC == L3)
+
+We can be relaxed about security in the following ways:
+   - Prefetching can be enabled: prefetching will only cause security problems if we prefetch a reserved set b/c of activity in a sw set.  This can be mitigated by causing the reserved sets to start at a page boundary.
+   - I$ misses on crypto++ code: probably not a problem b/c we are making WHEN encryption happens public anyway...

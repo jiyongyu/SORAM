@@ -1,0 +1,280 @@
+
+#include "dram.hpp"
+#include "cache.hpp"
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+
+// TODO PERF inline all of these methods
+
+inline bool_t is_valid(cache_line_t * line) 
+{
+   return line->status & MASK_VALID; 
+}
+
+inline void set_valid(cache_line_t * line) 
+{
+   line->status |= MASK_VALID; 
+}
+
+inline void clear_valid(cache_line_t * line) 
+{
+// make a macro so that we can distinguish who called this in cachegrind
+#define __CLEAR_VALID(line) (line->status &= ~MASK_VALID)
+   __CLEAR_VALID(line);
+}
+
+inline addr_t get_offset(addr_t a1) 
+{
+   return a1 & AFIELD_OFFSET_MASK; 
+}
+
+inline addr_t get_set(addr_t a1) 
+{
+   int raw_set = ((a1 >> AFIELD_SET_SHIFT) & AFIELD_SET_MASK);
+   if (raw_set < __SW_CACHE_set_size) 
+   {
+      return raw_set;
+   } else
+   {
+      // roll over
+      int adjusted_set = raw_set - __SW_CACHE_set_size;
+      ASSERT(adjusted_set <= __SW_CACHE_set_size);
+      ASSERT(adjusted_set >= 0); 
+      return adjusted_set;
+   }
+}
+
+inline addr_t get_tag(addr_t a1) 
+{ 
+   return a1 >> AFIELD_TAG_SHIFT; 
+}
+
+inline int get_lru (cache_line_t * line) 
+{ 
+   return ((line->status & (MASK_LRU << SHIFT_LRU)) >> SHIFT_LRU); 
+}
+
+inline void set_lru (cache_line_t * line, int lru) 
+{
+   line->status = ((lru << SHIFT_LRU) & (MASK_LRU << SHIFT_LRU)) |
+                  (line->status & (-1 - (MASK_LRU << SHIFT_LRU)));
+}
+
+inline bool_t tag_check(addr_t a1, addr_t a2) 
+{
+   return get_tag(a1) == get_tag(a2); 
+}
+
+inline cache_line_t * get_sw_way_base_addr(int way)
+{
+   // note: the amount of memory in a reserved region may != the amount in sw 
+   // memory
+   data_t * base = memory + llc_capacity_way * way + __memory_quantum;
+   ASSERT(is_sw_memory(base));
+   return (cache_line_t *) base;
+}
+
+// -----------------------------------------------------------------------------
+// Main logic
+// -----------------------------------------------------------------------------
+
+void update_status(addr_t cur_way, addr_t set)
+{
+   addr_t way;
+   cache_line_t * line;
+
+   // TODO PERF - THIS IS A PERFORMANCE BOTTLENECK [ if we comment out update_status, we get over 2x speedup! ]
+   for (way = 0; way < __SW_CACHE_associativity; way++) 
+   {
+      line = get_sw_way_base_addr(way);
+      line += set;
+      if (way == cur_way)
+         set_lru (line, get_lru (line) >> 1 | 4);
+      else
+         set_lru (line, get_lru (line) >> 1);
+   }
+}
+
+cache_line_t * evict_line(addr_t addr, addr_t set)
+{
+   //currently implementing LRU
+   cache_line_t * line;
+   cache_line_t * min_line = NULL;
+   int lru;
+   int min_lru = 100000;
+   addr_t way = 0;
+   addr_t min_way;
+
+   for (way = 0; way < __SW_CACHE_associativity; way++) 
+   {
+      line = get_sw_way_base_addr(way);
+      line += set;
+      lru = get_lru(line);
+      if (lru < min_lru) 
+      {
+         min_line = line;
+         min_lru = lru;
+         min_way = way;
+      }
+   }
+
+   way = min_way; // avoid compiler complaint
+#if DEBUG > 1
+   printf(  "\tCache(%d, %d) evicting. min_line: %p, Addr: %d, LRU: %d. Valid: %d\n",
+            min_way, set, min_line,
+            min_line->addr, min_lru, is_valid(min_line));
+#endif
+
+   if (is_valid(min_line))
+   {
+      ASSERT(min_line->addr != addr);
+      dram_write(min_line);
+      clear_valid(min_line);
+   }
+
+   return min_line;
+}
+
+word_t memory_access(word_t data, addr_t addr, word_t mask, int op) 
+{
+   ASSERT(op == READ || op == WRITE);
+
+#if DEBUG
+   cache_accesses++;
+#endif 
+
+   bool_t hit = FALSE;
+   word_t return_data = 0;
+
+   addr_t cur_set = get_set(addr);
+   addr_t cur_way = 0;
+   cache_line_t * hit_line;
+
+#if DEBUG > 1
+#define __OP_STR ((op == READ) ? "R" : "W")
+   printf("\tMEM[%d -> %d,%d] op = %s\n", addr, get_tag(addr), get_set(addr), __OP_STR);
+#endif
+
+   for (cur_way = 0; cur_way < __SW_CACHE_associativity; cur_way++) {
+      hit_line = get_sw_way_base_addr(cur_way);
+      hit_line += cur_set;
+      // make sure this whole line doesn't cross into reserved memory
+      ASSERT( is_sw_memory( (data_t *) hit_line ) );
+      ASSERT( is_sw_memory(((data_t *) (hit_line + 1)) - 1) );
+      ASSERT( !is_reserved_memory( (data_t *) hit_line ) );
+      ASSERT( !is_reserved_memory(((data_t *) (hit_line + 1)) - 1) );
+
+      // splitting these statements apare is useful for cachegrind
+      bool_t valid = is_valid(hit_line);
+      bool_t match = tag_check(hit_line->addr, addr);
+      if (valid && match) {
+         hit = TRUE;
+         break;
+      }
+   }
+
+#if DEBUG
+      cache_sets_searched += cur_way + 1;
+#endif
+
+   if (hit) {
+
+#if DEBUG
+      cache_hits++;
+#endif
+
+      addr_t offset = get_offset(addr);
+      // TODO enable cross-cache line accesses
+      ASSERT(offset <= (LINE_SIZE - sizeof(word_t)));
+
+      if (op == WRITE) {
+         word_t tmp = *((word_t *) (hit_line->data + offset));
+         tmp = (data & mask) | (tmp & ~mask);
+         *((word_t *) (hit_line->data + offset)) = tmp;
+      } else {
+         return_data = *((word_t *) (hit_line->data + offset));
+      }
+
+      update_status (cur_way, cur_set);
+#if DEBUG > 1
+      printf("\tHIT ;; Data = ");
+      print_cache_line(hit_line);
+#endif
+
+   } else {
+
+#if DEBUG
+      cache_misses++;
+#endif
+
+#if DEBUG > 1
+      printf("\tMISS ;; \n");
+#endif
+
+      hit_line = evict_line(addr, cur_set);
+
+      hit_line->addr = addr;
+      dram_read(hit_line);
+      set_valid(hit_line);
+      return_data = memory_access(data, addr, mask, op); // do access over again
+   }
+
+   return return_data;
+}
+
+// -----------------------------------------------------------------------------
+// Interface
+// -----------------------------------------------------------------------------
+
+word_t memory_read(addr_t addr) 
+{
+   return memory_access(0, addr, 0, READ);
+}
+
+void memory_write(word_t data, addr_t addr, word_t mask) 
+{
+   memory_access(data, addr, mask, WRITE);
+}
+
+// touch every line to bring it into the LLC
+// this function WILL cause LLC misses, but these are OK security-wise
+void cache_initialize()
+{
+#if DEBUG > 1
+      printf("Initializing cache ...\n");
+#endif
+
+   int way, i;
+   cache_line_t * way_base;
+   cache_line_t * line_base;
+   for (way = 0; way < __SW_CACHE_associativity; way++) {
+      way_base = get_sw_way_base_addr(way);
+      for (i = 0; i < __SW_CACHE_set_size; i++) {
+         line_base = way_base + i;
+         __CLEAR_VALID(line_base);
+         line_base->addr = 0xdeadbeef; // whatever
+         memset(line_base->data, 0, LINE_SIZE);
+#if DEBUG
+         cache_bytes_touched += sizeof(cache_line_t);
+#endif
+      }
+   }
+}
+
+void cache_flush() 
+{
+#if DEBUG > 1
+      printf("Flushing cache ...\n");
+#endif
+
+   int way, i;
+   cache_line_t * line;
+   for (way = 0; way < __SW_CACHE_associativity; way++) {
+      line = get_sw_way_base_addr(way);
+      for (i = 0; i < __SW_CACHE_set_size; i++)
+         if (is_valid(line + i)) dram_write (line + i);
+   }
+}
+
